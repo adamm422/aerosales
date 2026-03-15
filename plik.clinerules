@@ -1,0 +1,60 @@
+- Używaj tylko Tailwind CSS (zakaz plików .css).
+- Wszystkie komponenty muszą być w folderze src/components/.
+- Teksty na stronie mają być w języku polskim.
+- Używamy Tailwind CSS v4 - konfiguracja w src/index.css przez @import "tailwindcss" i @theme, bez tailwind.config.js.
+- Stack: React (Vite) + Tailwind CSS v4 + Lucide React (ikony).
+- Zewnętrzne obrazki są DOZWOLONE (flagi krajów z flagcdn.com, zdjęcie lotniska z unsplash).
+- Kolorystyka jest ustalona (nie pytaj o nią): ciemny header (#1f1f1f), złote akcenty (#d4a574), jasne tło (#ffffff).
+- Wymagane komponenty: Header (logo + PL/PLN), Hero (zdjęcie lotniska + tekst), SortBar (select), OffersGrid (grid 3 kolumny), OfferCard (flaga, data, cena, trasa WMI • ✈ • CHQ).
+- Dane o ofertach trzymaj w src/data/oferty.json (6 przykładowych lotów).
+- Strona jednostronicowa (bez routingu), responsywna (mobile: 1 kolumna, tablet: 2, desktop: 3).
+- Ceny w złotym kolorze, trasa z kropkami i linią przerywaną, daty w formacie polskim.
+- Brak backendu, brak logiki po stronie serwera (statyczny landing page).
+
+# =====================================
+# 🔒 ZASADY BEZPIECZEŃSTWA (SECURITY RULES) - PRIORYTET ABSOLUTNY
+# =====================================
+
+## 1. Świętość pliku .env
+- NIGDY nie wklejaj kluczy API, haseł, tokenów bezpośrednio do kodu .js/.tsx
+- ZAWSZE używaj: process.env.NAZWA_ZMIENNEJ lub import.meta.env.NAZWA_ZMIENNEJ
+- Plik .env MUSI być w .gitignore - sprawdź to przy każdej zmianie!
+- Jeśli wypchniesz .env na GitHub → klucz jest SPALONY, natychmiast go unieważnij
+
+## 2. PUŁAPKA PREFIKSÓW - NIE POPEŁNIJ TEGO BŁĘDU!
+- W Vite: zmienne z prefiksem VITE_ są PUBLICZNE (widoczne w przeglądarce)
+- NIGDY nie używaj VITE_ dla zmiennych zawierających: API_KEY, SECRET, PASSWORD, TOKEN, DATABASE_URL
+- Poprawnie: OPENAI_API_KEY (backend only)
+- ŹLE: VITE_OPENAI_API_KEY (wszyscy zobaczą twój klucz!)
+
+## 3. Architektura AI Proxy (OBOWIĄZKOWA)
+- Frontend NIGDY nie komunikuje się bezpośrednio z OpenAI/Stripe/innych API
+- Poprawny flow: Frontend → Twój API Route → AI API
+- Klucz API widzi TYLKO serwer, nigdy przeglądarka
+- Używaj Edge Functions (Vercel/Cloudflare) - darmowe i bezpieczne
+
+## 4. Walidacja Danych (ZOD)
+- KAŻDY input od użytkownika MUSI przejść walidację przez Zod
+- NIGDY nie ufaj danym z frontendu
+- Używaj validateData() z src/validation/schemas.js
+
+## 5. Rate Limiting
+- Każdy endpoint API MUSI mieć rate limiting
+- AI/External API: max 5 zapytań/minutę (kosztuje!)
+- Standardowe API: max 30 zapytań/minutę
+- Auth (login): max 5 prób/15 minut
+
+## 6. Obrona przed atakami
+- Walidacja rozmiaru pliku: max 2MB
+- Dozwolone formaty: JPG, PNG, WEBP (NIGDY SVG od użytkownika!)
+- Sanityzacja danych (XSS prevention)
+- NIGDY nie zwracaj stack trace do frontendu
+
+## 7. Security Checklist przed każdym commitem
+- [ ] Czy nie ma hardcoded kluczy w kodzie?
+- [ ] Czy .env jest w .gitignore?
+- [ ] Czy user input jest walidowany?
+- [ ] Czy endpoint ma rate limiting?
+- [ ] Czy błędy nie zwracają wrażliwych danych?
+
+# ZAPAMIĘTAJ: Jeśli coś kosztuje lub chroni dane - MUSI być na backendzie!

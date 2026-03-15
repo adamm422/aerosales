@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "miasto": "Chania (Kreta)",
+    "kraj": "Grecja",
+    "flaga": "https://flagcdn.com/w640/gr.png",
+    "dataWylotu": "6 kwietnia 2026",
+    "dataPowrotu": "15 kwietnia 2026",
+    "czas": "2 godz. 55 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "246 PLN",
+    "kodWylotu": "WMI",
+    "kodPrzylotu": "CHQ"
+  },
+  {
+    "id": "2",
+    "miasto": "Korfu",
+    "kraj": "Grecja",
+    "flaga": "https://flagcdn.com/w640/gr.png",
+    "dataWylotu": "7 kwietnia 2026",
+    "dataPowrotu": "15 kwietnia 2026",
+    "czas": "2 godz. 25 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "203 PLN",
+    "kodWylotu": "WMI",
+    "kodPrzylotu": "CFU"
+  },
+  {
+    "id": "3",
+    "miasto": "Sofia",
+    "kraj": "Bułgaria",
+    "flaga": "https://flagcdn.com/w640/bg.png",
+    "dataWylotu": "5 czerwca 2026",
+    "dataPowrotu": "8 czerwca 2026",
+    "czas": "1 godz. 40 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "132 PLN",
+    "kodWylotu": "KRK",
+    "kodPrzylotu": "SOF"
+  },
+  {
+    "id": "4",
+    "miasto": "Londyn",
+    "kraj": "UK",
+    "flaga": "https://flagcdn.com/w640/gb.png",
+    "dataWylotu": "10 maja 2026",
+    "dataPowrotu": "14 maja 2026",
+    "czas": "2 godz. 15 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "189 PLN",
+    "kodWylotu": "WAW",
+    "kodPrzylotu": "STN"
+  },
+  {
+    "id": "5",
+    "miasto": "Pekin",
+    "kraj": "Chiny",
+    "flaga": "https://flagcdn.com/w640/cn.png",
+    "dataWylotu": "1 lipca 2026",
+    "dataPowrotu": "15 lipca 2026",
+    "czas": "11 godz. 30 min",
+    "przesiadki": "1 przesiadka",
+    "cena": "1200 PLN",
+    "kodWylotu": "WAW",
+    "kodPrzylotu": "PEK"
+  },
+  {
+    "id": "6",
+    "miasto": "Barcelona",
+    "kraj": "Hiszpania",
+    "flaga": "https://flagcdn.com/w640/es.png",
+    "dataWylotu": "12 sierpnia 2026",
+    "dataPowrotu": "20 sierpnia 2026",
+    "czas": "2 godz. 40 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "356 PLN",
+    "kodWylotu": "WMI",
+    "kodPrzylotu": "BCN"
+  }
+]

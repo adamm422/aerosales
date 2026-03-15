@@ -1,0 +1,82 @@
+# =====================================
+# ZASADY BEZPIECZEŃSTWA - KONSTYTUCJA PROJEKTU
+# =====================================
+# Te zasady mają ABSOLUTNY priorytet przy każdej zmianie kodu
+# Naruszenie którejkolwiek zasad = natychmiastowy reject PR
+
+# =====================================
+# 🔒 ZASADY BEZPIECZEŃSTWA (SECURITY RULES)
+# =====================================
+
+## 1. ABSOLUTNY ZAKAZ HARDCODOWANIA KLUCZY
+- Całkowity zakaz hardkodowania kluczy API, haseł, tokenów, sekretów w jakimkolwiek pliku
+- ZAWSZE używaj process.env lub import.meta.env
+- NIGDY nie umieszczaj rzeczywistych wartości kluczy w kodzie, nawet w komentarzach
+
+## 2. FRONTEND VS BACKEND - ARCHITEKTURA
+- Wszystkie płatne API (OpenAI, Stripe, itp.) MUSZĄ być wywoływane wyłącznie z poziomu serwera/Edge Functions
+- Frontend NIGDY nie komunikuje się bezpośrednio z zewnętrznymi API wymagającymi kluczy
+- Używaj wzorca AI Proxy: Frontend → Twój API → Zewnętrzne API
+
+## 3. ZMIENNE ŚRODOWISKOWE - PREFIKSY
+- NIGDY nie używaj prefiksów VITE_ lub NEXT_PUBLIC_ dla zmiennych zawierających:
+  * Klucze API (API_KEY)
+  * Hasła (PASSWORD, SECRET)
+  * Tokeny (TOKEN, JWT)
+  * Connection strings (DATABASE_URL)
+- Prefiksy VITE_/NEXT_PUBLIC_ = zmienna jest publiczna i widoczna w przeglądarce
+
+## 4. WALIDACJA DANYCH
+- Każdy input od użytkownika MUSI przejść walidację przez schemat (Zod)
+- NIGDY nie ufaj danym z frontendu
+- Waliduj: typy, długość, format, zakresy wartości
+
+## 5. OCHRONA PRZED ATAKAMI
+- Rate limiting na wszystkich endpointach API
+- Sanitizacja danych wejściowych (XSS prevention)
+- Walidacja plików: max rozmiar (2MB), dozwolone formaty (JPG, PNG, WEBP)
+- NIGDY nie akceptuj SVG od użytkowników bez czyszczenia/konwersji
+- SQL Injection prevention (używaj parametryzowanych zapytań)
+
+## 6. OBSŁUGA BŁĘDÓW
+- Blokada zwracania pełnych błędów (stack trace) do frontendu
+- Użytkownik widzi: ogólny komunikat błędu
+- Logowanie: szczegóły błędu na serwerze (nie w przeglądarce!)
+
+## 7. AUTHENTICATION & AUTHORIZATION
+- Weryfikacja tokenów na każdym chronionym endpoincie
+- RLS (Row Level Security) w Supabase - zasada "RLS or Death"
+- Principle of Least Privilege - minimalne wymagane uprawnienia
+
+# =====================================
+# 🎨 ZASADY PROJEKTOWE (PROJECT RULES)
+# =====================================
+
+## Stack Technologiczny
+- React (Vite) + Tailwind CSS v4 + Lucide React
+- Walidacja: Zod
+- Style: wyłącznie Tailwind, zakaz plików .css (poza index.css)
+
+## Struktura Plików
+- Komponenty: src/components/
+- API/Server: src/api/ lub api/ (Next.js style)
+- Walidacja: src/validation/
+- Utils: src/utils/
+- Dane: src/data/
+
+## Język
+- Interfejs użytkownika: polski
+- Kod: angielski
+- Komentarze: polski (dokumentacja), angielski (inline)
+
+# =====================================
+# ⚠️ CHECKLISTA PRZED COMMITEM
+# =====================================
+
+- [ ] Czy w kodzie nie ma żadnych hardcoded kluczy?
+- [ ] Czy plik .env jest w .gitignore?
+- [ ] Czy wszystkie zmienne env używają poprawnych prefiksów?
+- [ ] Czy user input jest walidowany przez Zod?
+- [ ] Czy API endpoints mają rate limiting?
+- [ ] Czy błędy nie zwracają stack trace do frontendu?
+- [ ] Czy nowe zależności są bezpieczne (sprawdź npm audit)?
