@@ -43,18 +43,21 @@ function OfferPage({ isDarkMode }) {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-[#0a0a0a]' : 'bg-[#f5f5f5]'}`}>
       {/* Hero Section - tło z flagą */}
-      <div className="relative">
-        {/* Górne tło - flaga */}
+      <div className="relative overflow-hidden">
+        {/* Górne tło - flaga z lepszym skalowaniem */}
         <div
-          className="h-80 relative"
+          className="h-[400px] md:h-[500px] relative"
           style={{
             backgroundImage: `url(${offer.flaga})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center'
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
           }}
         >
-          {/* Overlay dla lepszej czytelności tekstu */}
-          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Gradient overlay dla lepszej widoczności flagi */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
+          {/* Dodatkowy overlay dla lepszej czytelności tekstu */}
+          <div className="absolute inset-0 bg-black/30"></div>
           <div className="max-w-6xl mx-auto px-4 pt-12 relative z-10">
             {/* Data */}
             <div className="inline-block bg-[#d4a574] text-[#1a1a1a] px-3 py-1 rounded text-sm font-medium mb-4">
