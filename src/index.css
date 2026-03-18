@@ -9,3 +9,22 @@
   --color-border-light: #e5e7eb;
   --font-family-sans: 'Poppins', system-ui, sans-serif;
 }
+
+/* Zapobieganie białym przebłyskom - krytyczne dla mobile */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Smooth transitions dla zmiany motywu */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Wyłącz transition dla elementów z własnymi animacjami */
+motion-div, .no-transition * {
+  transition: none !important;
+}

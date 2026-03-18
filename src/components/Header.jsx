@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import ThemeSwitch from './ThemeSwitch';
 
 const languages = ['PL', 'EN'];
@@ -14,13 +15,13 @@ function Header({ onThemeChange, isDarkMode }) {
     <header className="w-full h-16 bg-[#1a1a1a] z-50 relative">
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
         {/* Logo - LEFT */}
-        <div className="flex items-center gap-1">
+        <Link to="/" className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
           <img src="/logo.png" alt="aerosales" className="h-18 w-auto" />
           <div className="text-white leading-none text-xl" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 500 }}>
             <div>Aero</div>
             <div>Sales</div>
           </div>
-        </div>
+        </Link>
 
         {/* Language/Currency Dropdown + ThemeSwitch - RIGHT */}
         <div className="flex items-center gap-4">

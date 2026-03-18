@@ -3,11 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <title>temp-project</title>
+    <title>AeroSales - Okazje Lotnicze</title>
+    <script>
+      // Zapobieganie białym przebłyskom - ustaw tło PRZED załadowaniem React
+      (function() {
+        const savedTheme = localStorage.getItem('aerosales-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+        
+        // Ustaw kolor tła natychmiast
+        document.documentElement.style.backgroundColor = isDark ? '#0a0a0a' : '#f5f5f5';
+        document.body.style.backgroundColor = isDark ? '#0a0a0a' : '#f5f5f5';
+        
+        // Dodaj klasę do html dla CSS
+        document.documentElement.classList.toggle('dark', isDark);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
