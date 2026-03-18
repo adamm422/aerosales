@@ -77,21 +77,21 @@ function OfferPage({ isDarkMode }) {
             <div className="grid grid-cols-5 divide-x divide-gray-200">
               {/* Skąd */}
               <div className="py-4 px-2 text-center">
-                <img src={AirplaneTakeoffIcon} alt="Skąd" className="mx-auto mb-2 w-7 h-7" />
+                <img src={AirplaneTakeoffIcon} alt="Skąd" className={`mx-auto mb-2 w-7 h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-base mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Skąd</p>
                 <p className={`text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.kodWylotu === 'WMI' ? 'Modlin' : offer.kodWylotu}</p>
               </div>
 
               {/* Dokąd */}
               <div className="py-4 px-2 text-center">
-                <img src={AirplaneLandingIcon} alt="Dokąd" className="mx-auto mb-2 w-7 h-7" />
+                <img src={AirplaneLandingIcon} alt="Dokąd" className={`mx-auto mb-2 w-7 h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-base mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Dokąd</p>
                 <p className={`text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.miasto.split(' ')[0]}</p>
               </div>
 
               {/* Kiedy */}
               <div className="py-4 px-2 text-center">
-                <img src={CalendarIcon} alt="Kiedy" className="mx-auto mb-2 w-7 h-7" />
+                <img src={CalendarIcon} alt="Kiedy" className={`mx-auto mb-2 w-7 h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-base mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Kiedy</p>
                 <p className={`text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
                   {(() => {
@@ -113,14 +113,14 @@ function OfferPage({ isDarkMode }) {
 
               {/* Liczba przesiadek */}
               <div className="py-4 px-2 text-center">
-                <img src={BackpackIcon} alt="Przesiadki" className="mx-auto mb-2 w-7 h-7" />
+                <img src={BackpackIcon} alt="Przesiadki" className={`mx-auto mb-2 w-7 h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-base mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Liczba przesiadek</p>
                 <p className={`text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.przesiadki}</p>
               </div>
 
               {/* Długość podróży */}
               <div className="py-4 px-2 text-center">
-                <img src={ClockIcon} alt="Długość podróży" className="mx-auto mb-2 w-7 h-7" />
+                <img src={ClockIcon} alt="Długość podróży" className={`mx-auto mb-2 w-7 h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-base mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Długość podróży</p>
                 <p className={`text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.czas}</p>
               </div>
