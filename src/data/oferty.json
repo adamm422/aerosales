@@ -102,18 +102,5 @@
     "kodWylotu": "WMI",
     "kodPrzylotu": "XXX",
     "id": "8"
-  },
-  {
-    "miasto": "Londyn",
-    "kraj": "Londyn",
-    "flaga": "https://flagcdn.com/w640/unknown.png",
-    "dataWylotu": "1 stycznia 2026",
-    "dataPowrotu": "2 stycznia 2026",
-    "czas": "2 godz. 0 min",
-    "przesiadki": "bez przesiadek",
-    "cena": "19999 PLN",
-    "kodWylotu": "WMI",
-    "kodPrzylotu": "XXX",
-    "id": "9"
   }
 ]
