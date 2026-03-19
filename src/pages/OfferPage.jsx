@@ -1,6 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useState } from 'react';
-import { ArrowLeft, MapPin, Ticket, Bed, Users, Star, ChevronLeft, ChevronRight, Waves, Mountain, Landmark, Building2, Palmtree, Ship, Castle, Heart, Crown, Coffee, Trees, Columns, Cross, ShoppingBag, BookOpen, Store, Circle, Leaf, Shield, Sun, Flag, Flower2, Home, Umbrella, Footprints, Atom, Church } from 'lucide-react';
+import { ArrowLeft, MapPin, Ticket, Bed, Users, Star, Waves, Mountain, Landmark, Building2, Palmtree, Ship, Castle, Heart, Crown, Coffee, Trees, Columns, Cross, ShoppingBag, BookOpen, Store, Circle, Leaf, Shield, Sun, Flag, Flower2, Home, Umbrella, Footprints, Atom, Church } from 'lucide-react';
 import { getOfferBySlug } from '../utils/slugUtils';
 import AirplaneTakeoffIcon from '../assets/airplane-takeoff.svg';
 import AirplaneLandingIcon from '../assets/airplane-landing.svg';
@@ -193,25 +192,16 @@ function OfferPage({ isDarkMode }) {
   );
 }
 
-// Komponent galerii destynacji
+// Komponent informacji o destynacji
 function DestinationGallery({ offer, isDarkMode }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const images = offer.zdjecia || [];
   const opis = offer.opis || '';
   const atrakcje = offer.atrakcje || [];
   const miastoName = offer.miasto.split(' ')[0];
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  // Pobierz pierwsze zdjęcie lub użyj domyślnego
+  const zdjecie = offer.zdjecia && offer.zdjecia.length > 0 ? offer.zdjecia[0] : null;
 
   if (!offer.opis) {
-    return null; // Ukryj sekcję jeśli brak danych
+    return null;
   }
 
   return (
@@ -264,75 +254,18 @@ function DestinationGallery({ offer, isDarkMode }) {
             </a>
           </div>
 
-          {/* Prawa strona - galeria zdjęć */}
-          <div className="relative order-1 lg:order-2 bg-[#0a0a0a]">
-            {/* Główne zdjęcie */}
-            <div className="relative h-64 md:h-80 lg:h-full min-h-[300px] lg:min-h-[500px]">
-              {images.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`${miastoName} - zdjęcie ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              ))}
-
+          {/* Prawa strona - jedno zdjęcie */}
+          {zdjecie && (
+            <div className="relative order-1 lg:order-2">
+              <img
+                src={zdjecie}
+                alt={`${miastoName}`}
+                className="w-full h-64 md:h-80 lg:h-full min-h-[300px] lg:min-h-[500px] object-cover"
+              />
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-l"></div>
-
-              {/* Strzałki nawigacji */}
-              {images.length > 1 && (
-                <>
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-colors z-10"
-                    aria-label="Poprzednie zdjęcie"
-                  >
-                    <ChevronLeft size={24} />
-                  </button>
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-colors z-10"
-                    aria-label="Następne zdjęcie"
-                  >
-                    <ChevronRight size={24} />
-                  </button>
-                </>
-              )}
-
-              {/* Licznik zdjęć */}
-              <div className="absolute top-3 right-3 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
-                {currentImageIndex + 1} / {images.length}
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent lg:bg-gradient-to-l"></div>
             </div>
-
-            {/* Miniaturki */}
-            {images.length > 1 && (
-              <div className="absolute bottom-4 left-4 right-4 z-10">
-                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-                  {images.map((img, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${
-                        index === currentImageIndex
-                          ? 'border-[#d4a574] scale-105'
-                          : 'border-transparent opacity-70 hover:opacity-100'
-                      }`}
-                    >
-                      <img
-                        src={img}
-                        alt={`Miniatura ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+          )}
         </div>
       </div>
     </div>
