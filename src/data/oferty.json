@@ -102,5 +102,18 @@
     "kodWylotu": "WMI",
     "kodPrzylotu": "XXX",
     "id": "8"
+  },
+  {
+    "miasto": "Warszawa",
+    "kraj": "Polska",
+    "flaga": "https://flagcdn.com/w640/pl.png",
+    "dataWylotu": "20 lipca 2026",
+    "dataPowrotu": "21 lipca 2026",
+    "czas": "2 godz. 0 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "900 PLN",
+    "kodWylotu": "WMI",
+    "kodPrzylotu": "XXX",
+    "id": "9"
   }
 ]
