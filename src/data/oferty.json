@@ -378,5 +378,17 @@
     "kodWylotu": "WMI",
     "kodPrzylotu": "XXX",
     "id": "1773946506284_336967"
+  },
+  {
+    "dataWylotu": "19/10/2026",
+    "dataPowrotu": "23/10/2026",
+    "skad": "Warszawa",
+    "dokad": "Wenecja",
+    "czasLotu": "2 godz. 50 min",
+    "przesiadki": "3",
+    "opis": "Wenecja – miasto i gmina na północy Włoch nad Morzem Adriatyckim, stolica regionu Wenecja Euganejska. Ludność Wenecji w granicach administracyjnych wynosi około 255 tys. osób, z czego większość mieszka na lądzie stałym, a historyczne centrum zamieszkuje niecałe 50 tys.",
+    "link": "https://synergia.librus.pl/wiadomosci",
+    "cena": "1561 PLN",
+    "id": "1773951210050_441114"
   }
 ]
