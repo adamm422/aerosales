@@ -17,6 +17,15 @@ html, body {
   min-height: 100vh;
 }
 
+/* Ukrycie scrollbar dla galerii */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Smooth transitions dla zmiany motywu */
 * {
   transition-property: background-color, border-color, color, fill, stroke;

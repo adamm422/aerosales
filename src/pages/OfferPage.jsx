@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Ticket, Bed, Users, Star } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, MapPin, Ticket, Bed, Users, Star, ChevronLeft, ChevronRight, Waves, Mountain, Landmark, Building2, Palmtree, Ship, Castle, Heart, Crown, Coffee, Trees, Columns, Cross, ShoppingBag, BookOpen, Store, Circle, Leaf, Shield, Sun, Flag, Flower2, Home, Umbrella, Footprints, Atom, Church } from 'lucide-react';
 import { getOfferBySlug } from '../utils/slugUtils';
 import AirplaneTakeoffIcon from '../assets/airplane-takeoff.svg';
 import AirplaneLandingIcon from '../assets/airplane-landing.svg';
@@ -7,19 +8,15 @@ import CalendarIcon from '../assets/calendar-blank.svg';
 import ClockIcon from '../assets/clock.svg';
 import BackpackIcon from '../assets/backpack.svg';
 
+// Mapa ikon dla atrakcji
+const iconMap = {
+  Waves, Mountain, Landmark, Building2, Palmtree, Ship, Castle, Heart, Crown, Coffee, Trees, Columns, Cross, ShoppingBag, BookOpen, Store, Circle, Leaf, Shield, Sun, Flag, Flower2, Home, Umbrella, Footprints, Atom, Church
+};
+
 function OfferPage({ isDarkMode }) {
   const { offerId } = useParams();
   const offer = getOfferBySlug(offerId);
 
-  // Dane dla Krety (oferta #1)
-  const attractions = [
-    "Plaża Balos",
-    "Wąwóz Samaria",
-    "Stare Miasto w Chanii",
-    "Plaża Elafonisi",
-    "Knossos",
-    "Port wenecki w Chanii"
-  ];
 
   if (!offer) {
     return (
@@ -179,46 +176,8 @@ function OfferPage({ isDarkMode }) {
         </div>
       </div>
 
-      {/* Description Section */}
-      <div className="max-w-6xl mx-auto px-4 mt-6 md:mt-8 pb-8 md:pb-12">
-        <div className={`rounded-xl shadow-lg overflow-hidden transition-colors duration-300 ${isDarkMode ? 'bg-[#1a1a1a]' : 'bg-white'}`}>
-          {/* Mobile: 1 kolumna (tekst na górze, zdjęcie na dole), Desktop: 2 kolumny */}
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Lewa strona - opis */}
-            <div className="p-4 md:p-8 order-1">
-              <h2 className={`text-2xl md:text-3xl font-bold mb-3 md:mb-4 ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>Kreta</h2>
-
-              {/* Opis */}
-              <p className={`mb-4 md:mb-6 leading-relaxed text-sm md:text-base ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Kreta – największa grecka wyspa, perła Morza Śródziemnego. Słynie z malowniczych plaż,
-                starożytnych ruin Knossos, wąwozu Samaria i urokliwych miasteczek jak Chania i Rethymno.
-                Doskonałe miejsce na wakacje pełne słońca, historii i greckiej gościnności.
-              </p>
-
-              {/* Co warto zobaczyć */}
-              <h3 className={`font-bold mb-3 md:mb-4 text-base md:text-lg ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>Co warto zobaczyć</h3>
-              <ul className="space-y-2">
-                {attractions.map((attraction, index) => (
-                  <li key={index} className={`flex items-start gap-2 text-sm md:text-base ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                    <Star size={16} className="text-[#d4a574] mt-0.5 flex-shrink-0" />
-                    {attraction}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Prawa strona - zdjęcie */}
-            <div className="relative order-2">
-              <img
-                src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&h=600&fit=crop"
-                alt="Chania, Kreta"
-                className="w-full h-48 md:h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent md:bg-gradient-to-l"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Description Section - Dynamic Destination Info */}
+      <DestinationGallery offer={offer} isDarkMode={isDarkMode} />
 
       {/* Powrót */}
       <div className="max-w-6xl mx-auto px-4 pb-12">
@@ -229,6 +188,152 @@ function OfferPage({ isDarkMode }) {
           <ArrowLeft size={20} />
           Wróć do wszystkich ofert
         </Link>
+      </div>
+    </div>
+  );
+}
+
+// Komponent galerii destynacji
+function DestinationGallery({ offer, isDarkMode }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = offer.zdjecia || [];
+  const opis = offer.opis || '';
+  const atrakcje = offer.atrakcje || [];
+  const miastoName = offer.miasto.split(' ')[0];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  if (!offer.opis) {
+    return null; // Ukryj sekcję jeśli brak danych
+  }
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 mt-6 md:mt-8 pb-8 md:pb-12">
+      <div className={`rounded-xl shadow-lg overflow-hidden transition-colors duration-300 ${isDarkMode ? 'bg-[#1a1a1a]' : 'bg-white'}`}>
+        {/* Nagłówek sekcji */}
+        <div className={`px-4 md:px-8 py-4 md:py-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-100'}`}>
+          <h2 className={`text-xl md:text-2xl font-bold flex items-center gap-2 ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
+            <MapPin className="text-[#d4a574]" size={24} />
+            Odkryj {miastoName}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Lewa strona - opis i atrakcje */}
+          <div className="p-4 md:p-8 order-2 lg:order-1">
+            {/* Opis */}
+            <p className={`mb-6 leading-relaxed text-sm md:text-base ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              {opis}
+            </p>
+
+            {/* Co warto zobaczyć */}
+            <h3 className={`font-bold mb-4 text-base md:text-lg flex items-center gap-2 ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
+              <Star className="text-[#d4a574]" size={20} />
+              Co warto zobaczyć
+            </h3>
+            <ul className="space-y-3">
+              {atrakcje.map((attraction, index) => {
+                const IconComponent = iconMap[attraction.ikona] || Star;
+                return (
+                  <li key={index} className={`flex items-start gap-3 text-sm md:text-base ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                    <span className={`inline-flex items-center justify-center w-8 h-8 rounded-lg flex-shrink-0 ${isDarkMode ? 'bg-[#2a2a2a]' : 'bg-[#f5f5f5]'}`}>
+                      <IconComponent size={16} className="text-[#d4a574]" />
+                    </span>
+                    <span className="mt-1">{attraction.nazwa}</span>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* Przycisk mapa */}
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(offer.miasto)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-6 text-[#d4a574] hover:text-[#c49464] font-medium text-sm md:text-base transition-colors"
+            >
+              <MapPin size={18} />
+              Zobacz na mapie
+            </a>
+          </div>
+
+          {/* Prawa strona - galeria zdjęć */}
+          <div className="relative order-1 lg:order-2 bg-[#0a0a0a]">
+            {/* Główne zdjęcie */}
+            <div className="relative h-64 md:h-80 lg:h-full min-h-[300px] lg:min-h-[500px]">
+              {images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`${miastoName} - zdjęcie ${index + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              ))}
+
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-l"></div>
+
+              {/* Strzałki nawigacji */}
+              {images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-colors z-10"
+                    aria-label="Poprzednie zdjęcie"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-colors z-10"
+                    aria-label="Następne zdjęcie"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                </>
+              )}
+
+              {/* Licznik zdjęć */}
+              <div className="absolute top-3 right-3 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+                {currentImageIndex + 1} / {images.length}
+              </div>
+            </div>
+
+            {/* Miniaturki */}
+            {images.length > 1 && (
+              <div className="absolute bottom-4 left-4 right-4 z-10">
+                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                  {images.map((img, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${
+                        index === currentImageIndex
+                          ? 'border-[#d4a574] scale-105'
+                          : 'border-transparent opacity-70 hover:opacity-100'
+                      }`}
+                    >
+                      <img
+                        src={img}
+                        alt={`Miniatura ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
