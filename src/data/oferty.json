@@ -115,5 +115,18 @@
     "kodWylotu": "WMI",
     "kodPrzylotu": "XXX",
     "id": "9"
+  },
+  {
+    "miasto": "Marsylia",
+    "kraj": "Francja",
+    "flaga": "https://flagcdn.com/w640/fr.png",
+    "dataWylotu": "20 grudnia 2026",
+    "dataPowrotu": "21 grudnia 2026",
+    "czas": "2 godz. 0 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "952 PLN",
+    "kodWylotu": "WMI",
+    "kodPrzylotu": "XXX",
+    "id": "1773943777538_792480"
   }
 ]
