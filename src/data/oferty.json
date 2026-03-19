@@ -76,5 +76,18 @@
     "cena": "356 PLN",
     "kodWylotu": "WMI",
     "kodPrzylotu": "BCN"
+  },
+  {
+    "miasto": "Warszawa",
+    "kraj": "Polska",
+    "flaga": "https://flagcdn.com/w640/pl.png",
+    "dataWylotu": "8 czerwca 2026",
+    "dataPowrotu": "9 lipca 2026",
+    "czas": "2 godz. 0 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "500 PLN",
+    "kodWylotu": "WMI",
+    "kodPrzylotu": "XXX",
+    "id": "7"
   }
 ]
