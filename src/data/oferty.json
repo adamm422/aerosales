@@ -13,12 +13,36 @@
     "kodPrzylotu": "CHQ",
     "opis": "Kreta – największa grecka wyspa, perła Morza Śródziemnego. Słynie z malowniczych plaż ze szmaragdową wodą, starożytnych ruin pałacu Knossos, majestatycznego wąwozu Samaria oraz urokliwych miasteczek z wenecką architekturą. Chania, zachodnia stolica wyspy, urzeka wąskimi uliczkami Starego Miasta, portem weneckim i latarniami morskimi.",
     "atrakcje": [
-      { "nazwa": "Plaża Balos", "typ": "natura", "ikona": "Waves" },
-      { "nazwa": "Wąwóz Samaria", "typ": "natura", "ikona": "Mountain" },
-      { "nazwa": "Pałac Knossos", "typ": "historia", "ikona": "Landmark" },
-      { "nazwa": "Stare Miasto w Chanii", "typ": "miasto", "ikona": "Building2" },
-      { "nazwa": "Plaża Elafonisi", "typ": "natura", "ikona": "Palmtree" },
-      { "nazwa": "Port wenecki w Chanii", "typ": "miasto", "ikona": "Ship" }
+      {
+        "nazwa": "Plaża Balos",
+        "typ": "natura",
+        "ikona": "Waves"
+      },
+      {
+        "nazwa": "Wąwóz Samaria",
+        "typ": "natura",
+        "ikona": "Mountain"
+      },
+      {
+        "nazwa": "Pałac Knossos",
+        "typ": "historia",
+        "ikona": "Landmark"
+      },
+      {
+        "nazwa": "Stare Miasto w Chanii",
+        "typ": "miasto",
+        "ikona": "Building2"
+      },
+      {
+        "nazwa": "Plaża Elafonisi",
+        "typ": "natura",
+        "ikona": "Palmtree"
+      },
+      {
+        "nazwa": "Port wenecki w Chanii",
+        "typ": "miasto",
+        "ikona": "Ship"
+      }
     ],
     "zdjecia": [
       "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&h=600&fit=crop",
@@ -42,12 +66,36 @@
     "kodPrzylotu": "CFU",
     "opis": "Korfu – zielona perła Wysp Jońskich, znana z bujnej roślinności, krystalicznie czystych wód i weneckiej architektury. Stolica wyspy zachwyca wpisaną na listę UNESCO Starą Twierdzą, wąskimi uliczkami kafeneio i eleganckimi pałacami. Wyspa łączy grecką gościnność z włoskim temperamentem.",
     "atrakcje": [
-      { "nazwa": "Stara Twierdza w Korfu", "typ": "historia", "ikona": "Castle" },
-      { "nazwa": "Plaża Paleokastritsa", "typ": "natura", "ikona": "Waves" },
-      { "nazwa": "Canal d'Amour", "typ": "natura", "ikona": "Heart" },
-      { "nazwa": "Achilleion", "typ": "historia", "ikona": "Crown" },
-      { "nazwa": "Mount Pantokrator", "typ": "natura", "ikona": "Mountain" },
-      { "nazwa": "Liston", "typ": "miasto", "ikona": "Coffee" }
+      {
+        "nazwa": "Stara Twierdza w Korfu",
+        "typ": "historia",
+        "ikona": "Castle"
+      },
+      {
+        "nazwa": "Plaża Paleokastritsa",
+        "typ": "natura",
+        "ikona": "Waves"
+      },
+      {
+        "nazwa": "Canal d'Amour",
+        "typ": "natura",
+        "ikona": "Heart"
+      },
+      {
+        "nazwa": "Achilleion",
+        "typ": "historia",
+        "ikona": "Crown"
+      },
+      {
+        "nazwa": "Mount Pantokrator",
+        "typ": "natura",
+        "ikona": "Mountain"
+      },
+      {
+        "nazwa": "Liston",
+        "typ": "miasto",
+        "ikona": "Coffee"
+      }
     ],
     "zdjecia": [
       "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&h=600&fit=crop",
@@ -70,12 +118,36 @@
     "kodPrzylotu": "SOF",
     "opis": "Sofia – dynamiczna stolica Bułgarii u podnóża góry Witosza. To miasto, gdzie przeszłość spotyka teraźniejszość: cerkwie z Złotymi Kopułami sąsiadują z nowoczesnymi biurowcami, a termalne źródła Vitosha oferują relaks po zwiedzaniu. Stolica zachwyca niskimi cenami, bogatą historią i bułgarską gościnnością.",
     "atrakcje": [
-      { "nazwa": "Cerkiew Aleksandra Newskiego", "typ": "historia", "ikona": "Church" },
-      { "nazwa": "Bojana Church", "typ": "historia", "ikona": "Scroll" },
-      { "nazwa": "Park Narodowy Witosza", "typ": "natura", "ikona": "Trees" },
-      { "nazwa": "Rzymskie ruiny", "typ": "historia", "ikona": "Columns" },
-      { "nazwa": "Bulevard Vitosha", "typ": "miasto", "ikona": "ShoppingBag" },
-      { "nazwa": "Cerkiew św. Jerzego", "typ": "historia", "ikona": "Cross" }
+      {
+        "nazwa": "Cerkiew Aleksandra Newskiego",
+        "typ": "historia",
+        "ikona": "Church"
+      },
+      {
+        "nazwa": "Bojana Church",
+        "typ": "historia",
+        "ikona": "Scroll"
+      },
+      {
+        "nazwa": "Park Narodowy Witosza",
+        "typ": "natura",
+        "ikona": "Trees"
+      },
+      {
+        "nazwa": "Rzymskie ruiny",
+        "typ": "historia",
+        "ikona": "Columns"
+      },
+      {
+        "nazwa": "Bulevard Vitosha",
+        "typ": "miasto",
+        "ikona": "ShoppingBag"
+      },
+      {
+        "nazwa": "Cerkiew św. Jerzego",
+        "typ": "historia",
+        "ikona": "Cross"
+      }
     ],
     "zdjecia": [
       "https://images.unsplash.com/photo-1609863528735-f1b9b7193626?w=800&h=600&fit=crop",
@@ -98,12 +170,36 @@
     "kodPrzylotu": "STN",
     "opis": "Londyn – wielokulturowa stolica Wielkiej Brytanii, gdzie tradycja spotyka nowoczesność. Od Big Bena i Tower Bridge, przez Camden Market, po West End – miasto oferuje niezliczone atrakcje. Warto spacerować nad Tamizą, odkrywać muzea z darmowym wstępem i doświadczyć wyjątkowej atmosfery brytyjskiej.",
     "atrakcje": [
-      { "nazwa": "Tower Bridge", "typ": "miasto", "ikona": "Bridge" },
-      { "nazwa": "British Museum", "typ": "kultura", "ikona": "BookOpen" },
-      { "nazwa": "Buckingham Palace", "typ": "historia", "ikona": "Crown" },
-      { "nazwa": "Camden Market", "typ": "rozrywka", "ikona": "Store" },
-      { "nazwa": "London Eye", "typ": "rozrywka", "ikona": "Circle" },
-      { "nazwa": "Hyde Park", "typ": "natura", "ikona": "Leaf" }
+      {
+        "nazwa": "Tower Bridge",
+        "typ": "miasto",
+        "ikona": "Bridge"
+      },
+      {
+        "nazwa": "British Museum",
+        "typ": "kultura",
+        "ikona": "BookOpen"
+      },
+      {
+        "nazwa": "Buckingham Palace",
+        "typ": "historia",
+        "ikona": "Crown"
+      },
+      {
+        "nazwa": "Camden Market",
+        "typ": "rozrywka",
+        "ikona": "Store"
+      },
+      {
+        "nazwa": "London Eye",
+        "typ": "rozrywka",
+        "ikona": "Circle"
+      },
+      {
+        "nazwa": "Hyde Park",
+        "typ": "natura",
+        "ikona": "Leaf"
+      }
     ],
     "zdjecia": [
       "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=600&fit=crop",
@@ -127,12 +223,36 @@
     "kodPrzylotu": "PEK",
     "opis": "Pekin – historyczna stolica Chin, gdzie starożytna cywilizacja łączy się z nowoczesnym metropolitalnym życiem. Wielki Mur, Zakazane Miasto i Świątynia Nieba to tylko początek. Miasto zachwyca hutongami (tradycyjnymi uliczkami), kaczką po pekińsku i kontrastem między drapaczami chmur a dawnymi dzielnicami.",
     "atrakcje": [
-      { "nazwa": "Wielki Mur Chiński", "typ": "historia", "ikona": "Shield" },
-      { "nazwa": "Zakazane Miasto", "typ": "historia", "ikona": "Building" },
-      { "nazwa": "Świątynia Nieba", "typ": "historia", "ikona": "Sun" },
-      { "nazwa": "Plac Tiananmen", "typ": "miasto", "ikona": "Flag" },
-      { "nazwa": "Summer Palace", "typ": "natura", "ikona": "Flower2" },
-      { "nazwa": "Hutongi", "typ": "kultura", "ikona": "Home" }
+      {
+        "nazwa": "Wielki Mur Chiński",
+        "typ": "historia",
+        "ikona": "Shield"
+      },
+      {
+        "nazwa": "Zakazane Miasto",
+        "typ": "historia",
+        "ikona": "Building"
+      },
+      {
+        "nazwa": "Świątynia Nieba",
+        "typ": "historia",
+        "ikona": "Sun"
+      },
+      {
+        "nazwa": "Plac Tiananmen",
+        "typ": "miasto",
+        "ikona": "Flag"
+      },
+      {
+        "nazwa": "Summer Palace",
+        "typ": "natura",
+        "ikona": "Flower2"
+      },
+      {
+        "nazwa": "Hutongi",
+        "typ": "kultura",
+        "ikona": "Home"
+      }
     ],
     "zdjecia": [
       "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&h=600&fit=crop",
@@ -155,12 +275,36 @@
     "kodPrzylotu": "BCN",
     "opis": "Barcelona – stolica Katalonii, miasto Gaudíego, plaż i niekończącej się fiesty. Sagrada Familia, Park Güell i Casa Batlló to dzieła genialnego architekta. Ale Barcelona to także Barceloneta, gotycka dzielnica Barri Gòtic i niezliczone tapas bary. Miasto, które nigdy nie śpi.",
     "atrakcje": [
-      { "nazwa": "Sagrada Familia", "typ": "architektura", "ikona": "Church" },
-      { "nazwa": "Park Güell", "typ": "architektura", "ikona": "Palette" },
-      { "nazwa": "Casa Batlló", "typ": "architektura", "ikona": "Building2" },
-      { "nazwa": "Barri Gòtic", "typ": "miasto", "ikona": "MapPin" },
-      { "nazwa": "Plaża Barceloneta", "typ": "natura", "ikona": "Umbrella" },
-      { "nazwa": "La Rambla", "typ": "miasto", "ikona": "Footprints" }
+      {
+        "nazwa": "Sagrada Familia",
+        "typ": "architektura",
+        "ikona": "Church"
+      },
+      {
+        "nazwa": "Park Güell",
+        "typ": "architektura",
+        "ikona": "Palette"
+      },
+      {
+        "nazwa": "Casa Batlló",
+        "typ": "architektura",
+        "ikona": "Building2"
+      },
+      {
+        "nazwa": "Barri Gòtic",
+        "typ": "miasto",
+        "ikona": "MapPin"
+      },
+      {
+        "nazwa": "Plaża Barceloneta",
+        "typ": "natura",
+        "ikona": "Umbrella"
+      },
+      {
+        "nazwa": "La Rambla",
+        "typ": "miasto",
+        "ikona": "Footprints"
+      }
     ],
     "zdjecia": [
       "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&h=600&fit=crop",
@@ -184,12 +328,36 @@
     "id": "7",
     "opis": "Warszawa – feniks wśród miast, który odbudował się z popiołów II wojny światowej. Stolica Polski łączy starą architekturę Starówki wpisanej na listę UNESCO z nowoczesnymi drapaczami chmur. Pałac Kultury, Łazienki Królewskie i bulwary wiślane tworzą unikalną atmosferę.",
     "atrakcje": [
-      { "nazwa": "Stare Miasto", "typ": "historia", "ikona": "Building2" },
-      { "nazwa": "Pałac Kultury", "typ": "architektura", "ikona": "Building" },
-      { "nazwa": "Łazienki Królewskie", "typ": "natura", "ikona": "Trees" },
-      { "nazwa": "Centrum Nauki Kopernik", "typ": "kultura", "ikona": "Atom" },
-      { "nazwa": "Muzeum Powstania", "typ": "historia", "ikona": "Flag" },
-      { "nazwa": "Bulwary Wiślane", "typ": "natura", "ikona": "Waves" }
+      {
+        "nazwa": "Stare Miasto",
+        "typ": "historia",
+        "ikona": "Building2"
+      },
+      {
+        "nazwa": "Pałac Kultury",
+        "typ": "architektura",
+        "ikona": "Building"
+      },
+      {
+        "nazwa": "Łazienki Królewskie",
+        "typ": "natura",
+        "ikona": "Trees"
+      },
+      {
+        "nazwa": "Centrum Nauki Kopernik",
+        "typ": "kultura",
+        "ikona": "Atom"
+      },
+      {
+        "nazwa": "Muzeum Powstania",
+        "typ": "historia",
+        "ikona": "Flag"
+      },
+      {
+        "nazwa": "Bulwary Wiślane",
+        "typ": "natura",
+        "ikona": "Waves"
+      }
     ],
     "zdjecia": [
       "https://images.unsplash.com/photo-1517423738875-5be18ac9a26e?w=800&h=600&fit=crop",
@@ -197,5 +365,18 @@
       "https://images.unsplash.com/photo-1557683316-973673baf926?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&h=600&fit=crop"
     ]
+  },
+  {
+    "miasto": "Sycylia",
+    "kraj": "Włochy",
+    "flaga": "https://flagcdn.com/w640/it.png",
+    "dataWylotu": "1 lipca 2026",
+    "dataPowrotu": "5 lipca 2026",
+    "czas": "2 godz. 0 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "100000 PLN",
+    "kodWylotu": "WMI",
+    "kodPrzylotu": "XXX",
+    "id": "1773946506284_336967"
   }
 ]
