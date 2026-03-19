@@ -62,10 +62,10 @@ function OfferPage({ isDarkMode }) {
             
             {/* Tytuł */}
             <h1 className="text-5xl font-bold text-white mb-2 drop-shadow-lg">
-              {offer.miasto.split(' ')[0]}
+              {(offer.dokad || offer.miasto || 'Destynacja').split(' ')[0]}
             </h1>
             <p className="text-2xl text-white/90 mb-6 drop-shadow-md">
-              za <span className="font-bold text-[#d4a574]">{offer.cena.replace(' PLN', '')} PLN</span> w kwietniu
+              za <span className="font-bold text-[#d4a574]">{(offer.cena || '0 PLN').replace(' PLN', '')} PLN</span> w kwietniu
             </p>
           </div>
         </div>
@@ -79,14 +79,18 @@ function OfferPage({ isDarkMode }) {
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
                 <img src={AirplaneTakeoffIcon} alt="Skąd" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Skąd</p>
-                <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.kodWylotu === 'WMI' ? 'Modlin' : offer.kodWylotu}</p>
+                <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
+                  {offer.skad || (offer.kodWylotu === 'WMI' ? 'Modlin' : offer.kodWylotu) || '???'}
+                </p>
               </div>
 
               {/* Dokąd */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
                 <img src={AirplaneLandingIcon} alt="Dokąd" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Dokąd</p>
-                <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.miasto.split(' ')[0]}</p>
+                <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
+                  {(offer.dokad || offer.miasto || '???').split(' ')[0]}
+                </p>
               </div>
 
               {/* Kiedy */}
@@ -115,14 +119,16 @@ function OfferPage({ isDarkMode }) {
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
                 <img src={BackpackIcon} alt="Przesiadki" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Przesiadki</p>
-                <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.przesiadki}</p>
+                <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
+                  {offer.przesiadki === '0' ? 'Bez przesiadek' : offer.przesiadki}
+                </p>
               </div>
 
               {/* Długość podróży */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center col-span-2 md:col-span-1">
                 <img src={ClockIcon} alt="Czas" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Czas lotu</p>
-                <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.czas}</p>
+                <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.czasLotu || offer.czas || '???'}</p>
               </div>
             </div>
           </div>
@@ -141,7 +147,7 @@ function OfferPage({ isDarkMode }) {
                 <span className={`font-bold text-sm md:text-base ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`}>Bilety</span>
               </div>
               <a
-                href="https://www.ryanair.com/pl/pl"
+                href={offer.link || 'https://www.ryanair.com/pl/pl'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full bg-[#d4a574] hover:bg-[#c49464] text-[#1a1a1a] font-bold py-2.5 md:py-3 px-4 rounded-lg transition-colors text-sm md:text-base"
@@ -196,7 +202,7 @@ function OfferPage({ isDarkMode }) {
 function DestinationGallery({ offer, isDarkMode }) {
   const opis = offer.opis || '';
   const atrakcje = offer.atrakcje || [];
-  const miastoName = offer.miasto.split(' ')[0];
+  const miastoName = (offer.dokad || offer.miasto || 'Destynacja').split(' ')[0];
   // Pobierz pierwsze zdjęcie lub użyj domyślnego
   const zdjecie = offer.zdjecia && offer.zdjecia.length > 0 ? offer.zdjecia[0] : null;
 
@@ -211,7 +217,7 @@ function DestinationGallery({ offer, isDarkMode }) {
         <div className={`px-4 md:px-8 py-4 md:py-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-100'}`}>
           <h2 className={`text-xl md:text-2xl font-bold flex items-center gap-2 ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
             <MapPin className="text-[#d4a574]" size={24} />
-            Odkryj {miastoName}
+            {opis ? `Odkryj ${miastoName}` : 'Szczegóły oferty'}
           </h2>
         </div>
 
@@ -244,7 +250,7 @@ function DestinationGallery({ offer, isDarkMode }) {
 
             {/* Przycisk mapa */}
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(offer.miasto)}`}
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(offer.dokad || offer.miasto || '')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-6 text-[#d4a574] hover:text-[#c49464] font-medium text-sm md:text-base transition-colors"

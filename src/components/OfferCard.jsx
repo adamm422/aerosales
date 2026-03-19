@@ -34,7 +34,7 @@ function OfferCard({ offer, isDarkMode }) {
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
-            {offer.miasto}
+            {offer.dokad || offer.miasto || 'Destynacja'}
           </motion.h3>
         </div>
       </div>
@@ -51,19 +51,23 @@ function OfferCard({ offer, isDarkMode }) {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1">
               <img src={ClockIcon} alt="Czas" className={`w-4 h-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`} />
-              <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{offer.czas}</span>
+              <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{offer.czasLotu || offer.czas || '???'}</span>
             </div>
             <div className="flex items-center gap-1">
               <img src={AirplaneIcon} alt="Przesiadki" className={`w-4 h-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`} />
-              <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{offer.przesiadki}</span>
+              <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                {offer.przesiadki === '0' ? 'Bez' : offer.przesiadki}
+              </span>
             </div>
           </div>
-          <span className="text-[#d4a574] font-bold text-lg">{offer.cena}</span>
+          <span className="text-[#d4a574] font-bold text-lg">{offer.cena || '???'}</span>
         </div>
 
         {/* Trasa z animowanym samolotem */}
         <div className={`flex items-center justify-center mt-3 pt-3 border-t ${isDarkMode ? 'border-gray-600' : 'border-gray-100'}`}>
-          <span className={`font-bold ${isDarkMode ? 'text-gray-200' : 'text-gray-800'}`}>{offer.kodWylotu}</span>
+          <span className={`font-bold ${isDarkMode ? 'text-gray-200' : 'text-gray-800'}`}>
+            {offer.skad || offer.kodWylotu || '???'}
+          </span>
           <span className={`mx-1 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>•</span>
           <div className={`w-16 border-b-2 border-dashed ${isDarkMode ? 'border-gray-500' : 'border-gray-300'} relative`}>
             <motion.div
@@ -78,7 +82,9 @@ function OfferCard({ offer, isDarkMode }) {
           <img src={AirplaneIcon} alt="Plane" className="w-4 h-4 mx-1" style={{ filter: 'invert(68%) sepia(31%) saturate(468%) hue-rotate(345deg) brightness(95%) contrast(88%)' }} />
           <div className={`w-16 border-b-2 border-dashed ${isDarkMode ? 'border-gray-500' : 'border-gray-300'}`}></div>
           <span className={`mx-1 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>•</span>
-          <span className={`font-bold ${isDarkMode ? 'text-gray-200' : 'text-gray-800'}`}>{offer.kodPrzylotu}</span>
+          <span className={`font-bold ${isDarkMode ? 'text-gray-200' : 'text-gray-800'}`}>
+            {offer.dokad || offer.kodPrzylotu || '???'}
+          </span>
         </div>
       </div>
       </motion.div>

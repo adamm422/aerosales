@@ -48,7 +48,9 @@ export function generateOfferSlugs() {
   const sortedOffers = [...offers].sort((a, b) => parseInt(a.id) - parseInt(b.id));
 
   sortedOffers.forEach(offer => {
-    const baseSlug = normalizeCityName(offer.miasto);
+    // Obsługa zarówno starej struktury (miasto) jak i nowej (dokad)
+    const cityName = offer.dokad || offer.miasto || 'destynacja';
+    const baseSlug = normalizeCityName(cityName);
     
     // Zainicjalizuj licznik dla tego miasta
     if (!cityCounters[baseSlug]) {
