@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, MapPin, Ticket, Bed, Users, Star } from 'lucide-react';
-import offers from '../data/oferty.json';
+import { getOfferBySlug } from '../utils/slugUtils';
 import AirplaneTakeoffIcon from '../assets/airplane-takeoff.svg';
 import AirplaneLandingIcon from '../assets/airplane-landing.svg';
 import CalendarIcon from '../assets/calendar-blank.svg';
@@ -9,7 +9,7 @@ import BackpackIcon from '../assets/backpack.svg';
 
 function OfferPage({ isDarkMode }) {
   const { offerId } = useParams();
-  const offer = offers.find(o => o.id === offerId);
+  const offer = getOfferBySlug(offerId);
 
   // Dane dla Krety (oferta #1)
   const attractions = [
@@ -81,21 +81,21 @@ function OfferPage({ isDarkMode }) {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 divide-y md:divide-y-0 divide-x divide-gray-200 md:divide-gray-200">
               {/* Skąd */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
-                <img src={AirplaneTakeoffIcon} alt="Skąd" className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
+                <img src={AirplaneTakeoffIcon} alt="Skąd" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Skąd</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.kodWylotu === 'WMI' ? 'Modlin' : offer.kodWylotu}</p>
               </div>
 
               {/* Dokąd */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
-                <img src={AirplaneLandingIcon} alt="Dokąd" className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
+                <img src={AirplaneLandingIcon} alt="Dokąd" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Dokąd</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.miasto.split(' ')[0]}</p>
               </div>
 
               {/* Kiedy */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
-                <img src={CalendarIcon} alt="Kiedy" className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
+                <img src={CalendarIcon} alt="Kiedy" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Kiedy</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
                   {(() => {
@@ -117,14 +117,14 @@ function OfferPage({ isDarkMode }) {
 
               {/* Liczba przesiadek */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
-                <img src={BackpackIcon} alt="Przesiadki" className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
+                <img src={BackpackIcon} alt="Przesiadki" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Przesiadki</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.przesiadki}</p>
               </div>
 
               {/* Długość podróży */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center col-span-2 md:col-span-1">
-                <img src={ClockIcon} alt="Czas" className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 ${isDarkMode ? 'invert brightness-0' : ''}`} />
+                <img src={ClockIcon} alt="Czas" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
                 <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Czas lotu</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.czas}</p>
               </div>
@@ -199,34 +199,35 @@ function OfferPage({ isDarkMode }) {
               <h3 className={`font-bold mb-3 md:mb-4 text-base md:text-lg ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>Co warto zobaczyć</h3>
               <ul className="space-y-2">
                 {attractions.map((attraction, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <Star size={14} className="text-[#d4a574] md:w-4 md:h-4" />
-                    <span className={`text-sm md:text-base ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>{attraction}</span>
+                  <li key={index} className={`flex items-start gap-2 text-sm md:text-base ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                    <Star size={16} className="text-[#d4a574] mt-0.5 flex-shrink-0" />
+                    {attraction}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Prawa strona - zdjęcia */}
-            <div className={`relative h-64 md:h-auto ${isDarkMode ? 'bg-[#252525]' : 'bg-gray-100'} order-2`}>
+            {/* Prawa strona - zdjęcie */}
+            <div className="relative order-2">
               <img
-                src="https://images.unsplash.com/photo-1580504144247-12c0d8ef596f?w=800&q=80"
-                alt="Kreta"
-                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&h=600&fit=crop"
+                alt="Chania, Kreta"
+                className="w-full h-48 md:h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent md:bg-gradient-to-l"></div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Powrót */}
-      <div className="max-w-6xl mx-auto px-4 pb-6 md:pb-8">
-        <Link
+      <div className="max-w-6xl mx-auto px-4 pb-12">
+        <Link 
           to="/"
           className={`inline-flex items-center gap-2 text-sm md:text-base transition-colors ${isDarkMode ? 'text-gray-400 hover:text-gray-200' : 'text-gray-600 hover:text-[#1a1a1a]'}`}
         >
-          <ArrowLeft size={18} className="md:w-5 md:h-5" />
-          Wróć do ofert
+          <ArrowLeft size={20} />
+          Wróć do wszystkich ofert
         </Link>
       </div>
     </div>

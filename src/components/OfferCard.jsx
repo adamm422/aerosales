@@ -2,10 +2,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import ClockIcon from '../assets/clock.svg';
 import AirplaneIcon from '../assets/airplane-landing.svg';
+import { getSlugForOffer } from '../utils/slugUtils';
 
 function OfferCard({ offer, isDarkMode }) {
+  const slug = getSlugForOffer(offer.id);
+  
   return (
-    <Link to={`/oferta/${offer.id}`}>
+    <Link to={`/oferta/${slug}`}>
       <motion.div
         className={`${isDarkMode ? 'bg-[#252525]' : 'bg-white'} rounded-xl shadow-sm overflow-hidden cursor-pointer block`}
         whileHover={{
