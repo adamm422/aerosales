@@ -390,5 +390,17 @@
     "link": "https://synergia.librus.pl/wiadomosci",
     "cena": "1561 PLN",
     "id": "1773951210050_441114"
+  },
+  {
+    "dataWylotu": "15/04/2026",
+    "dataPowrotu": "22/04/2026",
+    "skad": "Warszawa",
+    "dokad": "Londyn",
+    "czasLotu": "2 godz. 20 min",
+    "przesiadki": "2",
+    "opis": "agasga",
+    "link": null,
+    "cena": "199 PLN",
+    "id": "1774010436903_566774"
   }
 ]
