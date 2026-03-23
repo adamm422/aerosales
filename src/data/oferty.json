@@ -402,22 +402,5 @@
     "link": null,
     "cena": "199 PLN",
     "id": "1774010436903_566774"
-  },
-  {
-    "skad": {
-      "miasto": "Warszawa",
-      "kod": "WMI"
-    },
-    "dokad": {
-      "miasto": "Londyn",
-      "kod": "STN"
-    },
-    "kiedy": "06.06-07.02.2026",
-    "dataPelna": "6 czerwca 2026",
-    "czasLotu": "2 godz. 30 min",
-    "przesiadki": "Trzy przesiadki",
-    "cena": 150,
-    "link": "https://www.esky.pl/flights/search/ap/KRK/ap/BCN?departureDate=2026-03-30&pa=1&py=0&pc=0&pi=0&sc=economy&returnDate=2026-04-22",
-    "id": "londyn1"
   }
 ]
