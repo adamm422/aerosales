@@ -312,5 +312,221 @@
       "https://images.unsplash.com/photo-1557683316-973673baf926?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&h=600&fit=crop"
     ]
+  },
+  {
+    "id": "rzym1",
+    "miasto": "Rzym",
+    "kraj": "Włochy",
+    "flaga": "https://flagcdn.com/w640/it.png",
+    "dataWylotu": "1 sierpnia 2026",
+    "dataPowrotu": "",
+    "czas": "2 godz. 25 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "263 PLN",
+    "kodWylotu": "WAW",
+    "kodPrzylotu": "FCO",
+    "opis": "Rzym – fascynujące miasto w Włochy, które warto odwiedzić.",
+    "atrakcje": [
+      {
+        "nazwa": "Stare Miasto w Rzym",
+        "typ": "miasto",
+        "ikona": "Building2"
+      },
+      {
+        "nazwa": "Muzeum Narodowe",
+        "typ": "kultura",
+        "ikona": "Landmark"
+      },
+      {
+        "nazwa": "Park Miejski",
+        "typ": "natura",
+        "ikona": "Trees"
+      },
+      {
+        "nazwa": "Zamek / Pałac",
+        "typ": "historia",
+        "ikona": "Castle"
+      },
+      {
+        "nazwa": "Rynek / Centrum",
+        "typ": "miasto",
+        "ikona": "MapPin"
+      },
+      {
+        "nazwa": "Plaża / Bulwary",
+        "typ": "natura",
+        "ikona": "Waves"
+      }
+    ],
+    "zdjecia": [
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop"
+    ],
+    "link": "https://www.esky.pl/okazje/106758/WAW-FCO"
+  },
+  {
+    "id": "mediolan1",
+    "miasto": "Mediolan",
+    "kraj": "Włochy",
+    "flaga": "https://flagcdn.com/w640/it.png",
+    "dataWylotu": "31 marca 2026",
+    "dataPowrotu": "15 kwietnia 2026",
+    "czas": "1 godz. 15 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "170 PLN",
+    "kodWylotu": "WRO",
+    "kodPrzylotu": "BGY",
+    "opis": "Mediolan – fascynujące miasto w Włochy, które warto odwiedzić.",
+    "atrakcje": [
+      {
+        "nazwa": "Stare Miasto w Mediolan",
+        "typ": "miasto",
+        "ikona": "Building2"
+      },
+      {
+        "nazwa": "Muzeum Narodowe",
+        "typ": "kultura",
+        "ikona": "Landmark"
+      },
+      {
+        "nazwa": "Park Miejski",
+        "typ": "natura",
+        "ikona": "Trees"
+      },
+      {
+        "nazwa": "Zamek / Pałac",
+        "typ": "historia",
+        "ikona": "Castle"
+      },
+      {
+        "nazwa": "Rynek / Centrum",
+        "typ": "miasto",
+        "ikona": "MapPin"
+      },
+      {
+        "nazwa": "Plaża / Bulwary",
+        "typ": "natura",
+        "ikona": "Waves"
+      }
+    ],
+    "zdjecia": [
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop"
+    ],
+    "link": "https://www.esky.pl/okazje/3345/WRO-BGY-FR"
+  },
+  {
+    "id": "londyn1",
+    "miasto": "Londyn",
+    "kraj": "Wielka Brytania",
+    "flaga": "https://flagcdn.com/w640/gb.png",
+    "dataWylotu": "30 marca 2026",
+    "dataPowrotu": "1 kwietnia 2026",
+    "czas": "2 godz.",
+    "przesiadki": "bez przesiadek",
+    "cena": "193 PLN",
+    "kodWylotu": "WRO",
+    "kodPrzylotu": "BVA",
+    "opis": "Londyn – fascynujące miasto w Wielka Brytania, które warto odwiedzić.",
+    "atrakcje": [
+      {
+        "nazwa": "Stare Miasto w Londyn",
+        "typ": "miasto",
+        "ikona": "Building2"
+      },
+      {
+        "nazwa": "Muzeum Narodowe",
+        "typ": "kultura",
+        "ikona": "Landmark"
+      },
+      {
+        "nazwa": "Park Miejski",
+        "typ": "natura",
+        "ikona": "Trees"
+      },
+      {
+        "nazwa": "Zamek / Pałac",
+        "typ": "historia",
+        "ikona": "Castle"
+      },
+      {
+        "nazwa": "Rynek / Centrum",
+        "typ": "miasto",
+        "ikona": "MapPin"
+      },
+      {
+        "nazwa": "Plaża / Bulwary",
+        "typ": "natura",
+        "ikona": "Waves"
+      }
+    ],
+    "zdjecia": [
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop"
+    ],
+    "link": "https://www.esky.pl/okazje/3667/WRO-BVA-FR"
+  },
+  {
+    "id": "walencja1",
+    "miasto": "Walencja",
+    "kraj": "Hiszpania",
+    "flaga": "https://flagcdn.com/w640/es.png",
+    "dataWylotu": "31 marca 2026",
+    "dataPowrotu": "4 kwietnia 2026",
+    "czas": "3 godz. 50 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "115 PLN",
+    "kodWylotu": "KRK",
+    "kodPrzylotu": "CTD",
+    "opis": "Walencja, hiszpańskie miasto pełne kontrastów i niesamowitych atrakcji. Rozpoznawalna dzięki futurystycznej Architekturze Nauki i Sztuki Calatravy, kontrastującej z historycznym centrum z Katedrą Świętego Jana oraz wieżą El Miguelete. Spacerując uliczkami Barri del Carme, można poczuć klimat tętniącego życiem Starego Miasta. Nie można zapomnieć o Pałacu Królewskim z pięknymi ogrodami oraz ogromnym, piaszczystym Plaża de la Malvarrosa, gdzie można odpocząć i delektować się widokiem Balearów. Walencja to miejsce, gdzie nowoczesność splata się z historią, tworząc niezapomnianą atmosferę nie do przeoczenia.",
+    "atrakcje": [
+      {
+        "nazwa": "La Ciudad de las Artes y las Ciencias",
+        "typ": "architektura",
+        "ikona": "Building"
+      },
+      {
+        "nazwa": "Plaza de la Virgen",
+        "typ": "miasto",
+        "ikona": "MapPin"
+      },
+      {
+        "nazwa": "Bioparc Valencia",
+        "typ": "natura",
+        "ikona": "Palmtree"
+      },
+      {
+        "nazwa": "Lonja de la Seda",
+        "typ": "historia",
+        "ikona": "Landmark"
+      },
+      {
+        "nazwa": "Playa de la Malvarrosa",
+        "typ": "natura",
+        "ikona": "Sun"
+      },
+      {
+        "nazwa": "Torres de Serranos",
+        "typ": "historia",
+        "ikona": "Castle"
+      }
+    ],
+    "zdjecia": [
+      "https://images.unsplash.com/photo-1569676766375-098f51c23761?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHw0fHxXYWxlbmNqYSUyMEhpc3pwYW5pYSUyMGNpdHklMjB0cmF2ZWx8ZW58MHwwfHx8MTc3NDM5MzI3Mnww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774393272163_0",
+      "https://images.unsplash.com/photo-1578783125892-233fd7a4f9c8?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHwxMHx8V2FsZW5jamElMjBIaXN6cGFuaWElMjBjaXR5JTIwdHJhdmVsfGVufDB8MHx8fDE3NzQzOTMyNzJ8MA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774393272163_1",
+      "https://images.unsplash.com/photo-1647097247371-37536bea75f4?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHwzfHxXYWxlbmNqYSUyMEhpc3pwYW5pYSUyMGNpdHklMjB0cmF2ZWx8ZW58MHwwfHx8MTc3NDM5MzI3Mnww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774393272163_2",
+      "https://images.unsplash.com/photo-1647097247321-97e0fa42a3b1?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHw5fHxXYWxlbmNqYSUyMEhpc3pwYW5pYSUyMGNpdHklMjB0cmF2ZWx8ZW58MHwwfHx8MTc3NDM5MzI3Mnww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774393272163_3",
+      "https://images.unsplash.com/photo-1722936161174-fdab18a7746a?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHw3fHxXYWxlbmNqYSUyMEhpc3pwYW5pYSUyMGNpdHklMjB0cmF2ZWx8ZW58MHwwfHx8MTc3NDM5MzI3Mnww&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774393272163_4"
+    ],
+    "link": "https://www.esky.pl/inspiracje/oferty?inspiration_id=596dada2-4c04-4358-aefb-08cd49ac503d&inspirationSourceId=31c93700-7978-4e04-8c31-0f3b827911b4"
   }
 ]
