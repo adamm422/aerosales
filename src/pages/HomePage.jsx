@@ -4,14 +4,17 @@ import OffersGrid from '../components/OffersGrid';
 import GradientText from '../components/GradientText';
 import { motion } from 'motion/react';
 import { useState } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 function HomePage({ isDarkMode }) {
   const [sortOption, setSortOption] = useState('newest');
   const [searchQuery, setSearchQuery] = useState('');
+  const { t } = useLanguage();
+
   return (
     <>
       <Hero isDarkMode={isDarkMode} />
-      
+
       {/* Biały box nachodzący na Hero */}
       <motion.div
         className="max-w-7xl mx-auto px-4 -mt-28 relative z-10"
@@ -28,7 +31,7 @@ function HomePage({ isDarkMode }) {
               showBorder={false}
               className="text-3xl md:text-4xl font-bold"
             >
-              Okazje lotnicze
+              {t('offersTitle')}
             </GradientText>
           </div>
           <SortBar
@@ -41,7 +44,7 @@ function HomePage({ isDarkMode }) {
           <OffersGrid isDarkMode={isDarkMode} sortOption={sortOption} searchQuery={searchQuery} />
         </div>
       </motion.div>
-      
+
       {/* Dodatkowe padding na dole */}
       <div className="h-8"></div>
     </>

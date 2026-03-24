@@ -5,11 +5,6 @@ export const translations = {
     currency: 'Waluta',
     
     // Hero
-    heroTitle: 'Odkryj świat z AeroSales',
-    heroSubtitle: 'Najlepsze okazje lotnicze w jednym miejscu. Oszczędzaj na podróżach i eksploruj nowe destynacje.',
-    ctaButton: 'Przeglądaj oferty',
-    
-    // Hero
     heroTitle: 'Znajdziemy dla Ciebie wymarzoną wycieczkę',
     heroSubtitle: 'Lot + hotel + atrakcje - szukamy kompletnych wycieczek zupełnie za darmo. Powiedz nam dokąd i kiedy chcesz jechać, a my znajdziemy najlepszą ofertę.',
     contactUs: 'Napisz do nas',
@@ -40,11 +35,37 @@ export const translations = {
     duration: 'Czas lotu',
     
     // OfferPage
+    offerNotFound: 'Oferta nie została znaleziona',
+    backToHome: 'Wróć do strony głównej',
+    backToOffers: 'Wróć do wszystkich ofert',
+    from: 'Skąd',
+    to: 'Dokąd',
+    when: 'Kiedy',
+    transfers: 'Przesiadki',
+    flightTime: 'Czas lotu',
+    tickets: 'Bilety',
+    buyTicket: 'Kup bilet',
+    accommodation: 'Nocleg',
+    comingSoon: 'Niedługo',
+    community: 'Społeczność',
+    join: 'Dołączam',
+    discover: 'Odkryj',
+    details: 'Szczegóły oferty',
+    worthSeeing: 'Co warto zobaczyć',
+    viewOnMap: 'Zobacz na mapie',
     attractions: 'Atrakcje',
     aboutDestination: 'O destynacji',
     bookNow: 'Rezerwuj teraz',
     fromPrice: 'Cena od',
     gallery: 'Galeria',
+    bookTrip: 'Rezerwuj wycieczkę',
+    inApril: 'w kwietniu',
+    
+    // Attraction types
+    nature: 'Natura',
+    history: 'Historia',
+    city: 'Miasto',
+    culture: 'Kultura',
     
     // Months
     months: {
@@ -66,11 +87,6 @@ export const translations = {
     // Header
     language: 'Language',
     currency: 'Currency',
-    
-    // Hero
-    heroTitle: 'Discover the world with AeroSales',
-    heroSubtitle: 'The best flight deals in one place. Save on travel and explore new destinations.',
-    ctaButton: 'Browse offers',
     
     // Hero
     heroTitle: 'We will find your dream trip',
@@ -108,6 +124,13 @@ export const translations = {
     bookNow: 'Book now',
     fromPrice: 'Price from',
     gallery: 'Gallery',
+    bookTrip: 'Book trip',
+    
+    // Attraction types
+    nature: 'Nature',
+    history: 'History',
+    city: 'City',
+    culture: 'Culture',
     
     // Months
     months: {

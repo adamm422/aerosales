@@ -1,37 +1,20 @@
 import OfferCard from './OfferCard';
 import oferty from '../data/oferty.json';
 import { motion } from 'motion/react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 function OffersGrid({ isDarkMode, sortOption, searchQuery }) {
+  const { t } = useLanguage();
+
   // Helper function to parse price string (e.g., "246 PLN" -> 246)
   const parsePrice = (priceStr) => {
     const match = priceStr.match(/(\d+)/);
     return match ? parseInt(match[0], 10) : 0;
   };
 
-  // Helper function to parse date string (e.g., "6 kwietnia 2026" -> Date object)
-  const parseDate = (dateStr) => {
-    const monthNames = {
-      'stycznia': 0, 'lutego': 1, 'marca': 2, 'kwietnia': 3,
-      'maja': 4, 'czerwca': 5, 'lipca': 6, 'sierpnia': 7,
-      'września': 8, 'października': 9, 'listopada': 10, 'grudnia': 11
-    };
-    
-    const parts = dateStr.split(' ');
-    if (parts.length >= 3) {
-      const day = parseInt(parts[0], 10);
-      const month = monthNames[parts[1].toLowerCase()];
-      const year = parseInt(parts[2], 10);
-      if (month !== undefined) {
-        return new Date(year, month, day);
-      }
-    }
-    return new Date(0);
-  };
-
   // Filter offers based on search query
   const filteredOffers = searchQuery.trim()
-    ? oferty.filter(offer =>
+    ? oferty.filter(offer => 
         offer.miasto.toLowerCase().includes(searchQuery.toLowerCase()) ||
         offer.kraj.toLowerCase().includes(searchQuery.toLowerCase())
       )
@@ -50,6 +33,7 @@ function OffersGrid({ isDarkMode, sortOption, searchQuery }) {
         return parseInt(b.id, 10) - parseInt(a.id, 10);
     }
   });
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -78,8 +62,8 @@ function OffersGrid({ isDarkMode, sortOption, searchQuery }) {
     <>
       {sortedOffers.length === 0 ? (
         <div className={`text-center py-12 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-          <p className="text-lg">Nie znaleziono ofert dla "{searchQuery}"</p>
-          <p className="text-sm mt-2">Spróbuj wyszukać inną nazwę miasta lub kraju</p>
+          <p className="text-lg">{t('noResults')} "{searchQuery}"</p>
+          <p className="text-sm mt-2">{t('tryAnother')}</p>
         </div>
       ) : (
         <motion.div

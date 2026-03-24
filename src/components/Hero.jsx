@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Mail, Phone, X } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 function Hero({ isDarkMode }) {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <>
@@ -23,7 +25,7 @@ function Hero({ isDarkMode }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
           >
-            Znajdziemy dla Ciebie wymarzoną wycieczkę
+            {t('heroTitle')}
           </motion.h1>
           <motion.p
             className="text-lg text-white/90 mb-6 max-w-2xl mx-auto"
@@ -31,8 +33,7 @@ function Hero({ isDarkMode }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
           >
-            Lot + hotel + atrakcje - szukamy kompletnych wycieczek zupełnie za darmo.
-            Powiedz nam dokąd i kiedy chcesz jechać, a my znajdziemy najlepszą ofertę.
+            {t('heroSubtitle')}
           </motion.p>
           <button
             onClick={() => setIsContactModalOpen(true)}
@@ -49,7 +50,7 @@ function Hero({ isDarkMode }) {
             {/* Content */}
             <span className={`relative z-10 flex items-center gap-2 ${isDarkMode ? 'text-white' : 'text-[#007bff]'}`}>
               <Mail size={20} />
-              Napisz do nas
+              {t('contactUs')}
             </span>
           </button>
         </div>
@@ -75,7 +76,7 @@ function Hero({ isDarkMode }) {
 
             {/* Title */}
             <h2 className={`text-2xl font-bold mb-6 text-center ${isDarkMode ? 'text-white' : 'text-[#1a1a1a]'}`}>
-              Skontaktuj się z nami
+              {t('contactTitle')}
             </h2>
 
             {/* Contact Info */}
@@ -89,7 +90,7 @@ function Hero({ isDarkMode }) {
                   <Mail className="text-[#d4a574]" size={24} />
                 </div>
                 <div>
-                  <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Email</p>
+                  <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t('email')}</p>
                   <p className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-[#1a1a1a]'}`}>kontakt@aerosales.pl</p>
                 </div>
               </a>
@@ -103,7 +104,7 @@ function Hero({ isDarkMode }) {
                   <Phone className="text-[#d4a574]" size={24} />
                 </div>
                 <div>
-                  <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Telefon</p>
+                  <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t('phone')}</p>
                   <p className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-[#1a1a1a]'}`}>+48 577 530 532</p>
                 </div>
               </a>

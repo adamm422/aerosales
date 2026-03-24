@@ -1,8 +1,10 @@
 import { ChevronDown, Search } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import oferty from '../data/oferty.json';
+import { useLanguage } from '../i18n/LanguageContext';
 
 function SortBar({ isDarkMode, sortOption, onSortChange, searchQuery, onSearchChange }) {
+  const { t, language } = useLanguage();
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const inputRef = useRef(null);
@@ -15,7 +17,7 @@ function SortBar({ isDarkMode, sortOption, onSortChange, searchQuery, onSearchCh
   useEffect(() => {
     if (searchQuery.trim().length > 0) {
       const query = searchQuery.toLowerCase();
-      const filtered = destinations.filter(dest =>
+      const filtered = destinations.filter(dest => 
         dest.toLowerCase().includes(query)
       ).slice(0, 5); // Limit to 5 suggestions
       setSuggestions(filtered);
@@ -70,6 +72,7 @@ function SortBar({ isDarkMode, sortOption, onSortChange, searchQuery, onSearchCh
     }
     return parts;
   };
+
   return (
     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-6 justify-end">
       {/* Wyszukiwarka z lupką - po lewej */}
@@ -78,7 +81,7 @@ function SortBar({ isDarkMode, sortOption, onSortChange, searchQuery, onSearchCh
         <input
           ref={inputRef}
           type="text"
-          placeholder="Wyszukaj kierunek..."
+          placeholder={t('searchPlaceholder')}
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
           onFocus={() => searchQuery.trim().length > 0 && suggestions.length > 0 && setShowSuggestions(true)}
@@ -92,8 +95,8 @@ function SortBar({ isDarkMode, sortOption, onSortChange, searchQuery, onSearchCh
         {/* Autocomplete suggestions */}
         {showSuggestions && (
           <div className={`absolute top-full left-0 right-0 mt-1 rounded-lg shadow-lg border z-50 overflow-hidden ${
-            isDarkMode
-              ? 'bg-[#252525] border-gray-600'
+            isDarkMode 
+              ? 'bg-[#252525] border-gray-600' 
               : 'bg-white border-gray-200'
           }`}>
             {suggestions.map((suggestion, index) => (
@@ -101,8 +104,8 @@ function SortBar({ isDarkMode, sortOption, onSortChange, searchQuery, onSearchCh
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
                 className={`w-full text-left px-4 py-2 text-sm transition-colors ${
-                  isDarkMode
-                    ? 'text-white hover:bg-gray-700'
+                  isDarkMode 
+                    ? 'text-white hover:bg-gray-700' 
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
@@ -115,7 +118,7 @@ function SortBar({ isDarkMode, sortOption, onSortChange, searchQuery, onSearchCh
 
       {/* Sortowanie - obok wyszukiwarki */}
       <div className="relative flex-1 sm:flex-none">
-        <select
+        <select 
           value={sortOption}
           onChange={(e) => onSortChange(e.target.value)}
           className={`appearance-none border rounded-lg px-3 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[#007bff] focus:border-transparent cursor-pointer ${
@@ -123,9 +126,9 @@ function SortBar({ isDarkMode, sortOption, onSortChange, searchQuery, onSearchCh
             ? 'bg-[#252525] border-gray-600 text-white'
             : 'bg-white border-gray-300 text-gray-700'
         }`}>
-          <option value="newest">Sortuj według: Najnowsze</option>
-          <option value="price-asc">Sortuj według: Cena rosnąco</option>
-          <option value="price-desc">Sortuj według: Cena malejąco</option>
+          <option value="newest">{t('sortBy')} {t('newest')}</option>
+          <option value="price-asc">{t('sortBy')} {t('priceAsc')}</option>
+          <option value="price-desc">{t('sortBy')} {t('priceDesc')}</option>
         </select>
         <ChevronDown
           size={16}
