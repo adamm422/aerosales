@@ -48,14 +48,14 @@ function OfferCard({ offer, isDarkMode }) {
 
         {/* Czas i przesiadki + cena */}
         <div className="flex justify-between items-start mt-2 h-10">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col gap-0.5">
             <div className="flex items-center gap-1">
               <img src={ClockIcon} alt="Czas" className={`w-4 h-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`} />
-              <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} whitespace-nowrap`}>{offer.czasLotu || offer.czas || '???'}</span>
+              <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{offer.czasLotu || offer.czas || '???'}</span>
             </div>
             <div className="flex items-center gap-1">
               <img src={AirplaneIcon} alt="Przesiadki" className={`w-4 h-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`} />
-              <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} whitespace-nowrap`}>
+              <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                 {offer.przesiadki === '0' ? 'Bez przesiadek' : offer.przesiadki}
               </span>
             </div>
