@@ -366,5 +366,59 @@
       "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop"
     ],
     "link": "https://www.esky.pl/okazje/106758/WAW-FCO"
+  },
+  {
+    "id": "mediolan1",
+    "miasto": "Mediolan",
+    "kraj": "Włochy",
+    "flaga": "https://flagcdn.com/w640/it.png",
+    "dataWylotu": "31 marca 2026",
+    "dataPowrotu": "15 kwietnia 2026",
+    "czas": "1 godz. 15 min",
+    "przesiadki": "bez przesiadek",
+    "cena": "170 PLN",
+    "kodWylotu": "WRO",
+    "kodPrzylotu": "BGY",
+    "opis": "Mediolan – fascynujące miasto w Włochy, które warto odwiedzić.",
+    "atrakcje": [
+      {
+        "nazwa": "Stare Miasto w Mediolan",
+        "typ": "miasto",
+        "ikona": "Building2"
+      },
+      {
+        "nazwa": "Muzeum Narodowe",
+        "typ": "kultura",
+        "ikona": "Landmark"
+      },
+      {
+        "nazwa": "Park Miejski",
+        "typ": "natura",
+        "ikona": "Trees"
+      },
+      {
+        "nazwa": "Zamek / Pałac",
+        "typ": "historia",
+        "ikona": "Castle"
+      },
+      {
+        "nazwa": "Rynek / Centrum",
+        "typ": "miasto",
+        "ikona": "MapPin"
+      },
+      {
+        "nazwa": "Plaża / Bulwary",
+        "typ": "natura",
+        "ikona": "Waves"
+      }
+    ],
+    "zdjecia": [
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop"
+    ],
+    "link": "https://www.esky.pl/okazje/3345/WRO-BGY-FR"
   }
 ]
