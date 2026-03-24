@@ -157,59 +157,6 @@
     ]
   },
   {
-    "id": "4",
-    "miasto": "Londyn",
-    "kraj": "UK",
-    "flaga": "https://flagcdn.com/w640/gb.png",
-    "dataWylotu": "10 maja 2026",
-    "dataPowrotu": "14 maja 2026",
-    "czas": "2 godz. 15 min",
-    "przesiadki": "bez przesiadek",
-    "cena": "189 PLN",
-    "kodWylotu": "WAW",
-    "kodPrzylotu": "STN",
-    "opis": "Londyn – wielokulturowa stolica Wielkiej Brytanii, gdzie tradycja spotyka nowoczesność. Od Big Bena i Tower Bridge, przez Camden Market, po West End – miasto oferuje niezliczone atrakcje. Warto spacerować nad Tamizą, odkrywać muzea z darmowym wstępem i doświadczyć wyjątkowej atmosfery brytyjskiej.",
-    "atrakcje": [
-      {
-        "nazwa": "Tower Bridge",
-        "typ": "miasto",
-        "ikona": "Bridge"
-      },
-      {
-        "nazwa": "British Museum",
-        "typ": "kultura",
-        "ikona": "BookOpen"
-      },
-      {
-        "nazwa": "Buckingham Palace",
-        "typ": "historia",
-        "ikona": "Crown"
-      },
-      {
-        "nazwa": "Camden Market",
-        "typ": "rozrywka",
-        "ikona": "Store"
-      },
-      {
-        "nazwa": "London Eye",
-        "typ": "rozrywka",
-        "ikona": "Circle"
-      },
-      {
-        "nazwa": "Hyde Park",
-        "typ": "natura",
-        "ikona": "Leaf"
-      }
-    ],
-    "zdjecia": [
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1494922275507-269f9700f640?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1533929736472-594e45db7054?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=800&h=600&fit=crop"
-    ]
-  },
-  {
     "id": "5",
     "miasto": "Pekin",
     "kraj": "Chiny",
@@ -365,18 +312,5 @@
       "https://images.unsplash.com/photo-1557683316-973673baf926?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&h=600&fit=crop"
     ]
-  },
-  {
-    "miasto": "Sycylia",
-    "kraj": "Włochy",
-    "flaga": "https://flagcdn.com/w640/it.png",
-    "dataWylotu": "1 lipca 2026",
-    "dataPowrotu": "5 lipca 2026",
-    "czas": "2 godz. 0 min",
-    "przesiadki": "bez przesiadek",
-    "cena": "100000 PLN",
-    "kodWylotu": "WMI",
-    "kodPrzylotu": "XXX",
-    "id": "1773946506284_336967"
   }
 ]
