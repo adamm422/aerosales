@@ -528,59 +528,5 @@
       "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop"
     ],
     "link": "https://www.esky.pl/okazje/116913/WAW-ZRH"
-  },
-  {
-    "id": "oslo1",
-    "miasto": "Oslo",
-    "kraj": "Nieznany",
-    "flaga": "https://flagcdn.com/w640/unknown.png",
-    "dataWylotu": "26 marca 2026",
-    "dataPowrotu": "10 kwietnia 2026",
-    "czas": "1 godz. 50 min",
-    "przesiadki": "bez przesiadek",
-    "cena": "163 PLN",
-    "kodWylotu": "WRO",
-    "kodPrzylotu": "TRF",
-    "opis": "Oslo – fascynujące miasto w Nieznany, które warto odwiedzić.",
-    "atrakcje": [
-      {
-        "nazwa": "Stare Miasto w Oslo",
-        "typ": "miasto",
-        "ikona": "Building2"
-      },
-      {
-        "nazwa": "Muzeum Narodowe",
-        "typ": "kultura",
-        "ikona": "Landmark"
-      },
-      {
-        "nazwa": "Park Miejski",
-        "typ": "natura",
-        "ikona": "Trees"
-      },
-      {
-        "nazwa": "Zamek / Pałac",
-        "typ": "historia",
-        "ikona": "Castle"
-      },
-      {
-        "nazwa": "Rynek / Centrum",
-        "typ": "miasto",
-        "ikona": "MapPin"
-      },
-      {
-        "nazwa": "Plaża / Bulwary",
-        "typ": "natura",
-        "ikona": "Waves"
-      }
-    ],
-    "zdjecia": [
-      "https://images.unsplash.com/photo-1657272179713-8ffc17bdeddb?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHw0M3x8T3NsbyUyME5pZXpuYW55JTIwY2l0eSUyMHRyYXZlbHxlbnwwfDB8fHwxNzc0MzkyMTQ2fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774392146616_0",
-      "https://images.unsplash.com/photo-1634985492480-c9a3c229e048?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHw0NHx8T3NsbyUyME5pZXpuYW55JTIwY2l0eSUyMHRyYXZlbHxlbnwwfDB8fHwxNzc0MzkyMTQ2fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774392146616_1",
-      "https://images.unsplash.com/photo-1627417270105-d27b2cf66fd6?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHw0OXx8T3NsbyUyME5pZXpuYW55JTIwY2l0eSUyMHRyYXZlbHxlbnwwfDB8fHwxNzc0MzkyMTQ2fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774392146616_2",
-      "https://images.unsplash.com/photo-1677745675989-813b2154a618?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHw1MHx8T3NsbyUyME5pZXpuYW55JTIwY2l0eSUyMHRyYXZlbHxlbnwwfDB8fHwxNzc0MzkyMTQ2fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774392146616_3",
-      "https://images.unsplash.com/photo-1571737912373-21d7a807b972?ixid=M3w5MDUwNTJ8MHwxfHNlYXJjaHw0Nnx8T3NsbyUyME5pZXpuYW55JTIwY2l0eSUyMHRyYXZlbHxlbnwwfDB8fHwxNzc0MzkyMTQ2fDA&ixlib=rb-4.1.0&w=800&h=600&fit=crop&sig=1774392146616_4"
-    ],
-    "link": "https://www.esky.pl/okazje/68283/WRO-TRF-FR"
   }
 ]
