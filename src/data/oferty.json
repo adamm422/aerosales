@@ -474,5 +474,59 @@
       "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop"
     ],
     "link": "https://www.esky.pl/okazje/3667/WRO-BVA-FR"
+  },
+  {
+    "id": "zurich1",
+    "miasto": "Zurich",
+    "kraj": "Nieznany",
+    "flaga": "https://flagcdn.com/w640/unknown.png",
+    "dataWylotu": "7 maja 2026",
+    "dataPowrotu": "12 maja 2026",
+    "czas": "2 godz.",
+    "przesiadki": "bez przesiadek",
+    "cena": "570 PLN",
+    "kodWylotu": "WAW",
+    "kodPrzylotu": "ZRH",
+    "opis": "Zurich – fascynujące miasto w Nieznany, które warto odwiedzić.",
+    "atrakcje": [
+      {
+        "nazwa": "Stare Miasto w Zurich",
+        "typ": "miasto",
+        "ikona": "Building2"
+      },
+      {
+        "nazwa": "Muzeum Narodowe",
+        "typ": "kultura",
+        "ikona": "Landmark"
+      },
+      {
+        "nazwa": "Park Miejski",
+        "typ": "natura",
+        "ikona": "Trees"
+      },
+      {
+        "nazwa": "Zamek / Pałac",
+        "typ": "historia",
+        "ikona": "Castle"
+      },
+      {
+        "nazwa": "Rynek / Centrum",
+        "typ": "miasto",
+        "ikona": "MapPin"
+      },
+      {
+        "nazwa": "Plaża / Bulwary",
+        "typ": "natura",
+        "ikona": "Waves"
+      }
+    ],
+    "zdjecia": [
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop"
+    ],
+    "link": "https://www.esky.pl/okazje/116913/WAW-ZRH"
   }
 ]
