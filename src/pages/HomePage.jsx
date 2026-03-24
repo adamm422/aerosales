@@ -3,8 +3,11 @@ import SortBar from '../components/SortBar';
 import OffersGrid from '../components/OffersGrid';
 import GradientText from '../components/GradientText';
 import { motion } from 'motion/react';
+import { useState } from 'react';
 
 function HomePage({ isDarkMode }) {
+  const [sortOption, setSortOption] = useState('newest');
+  const [searchQuery, setSearchQuery] = useState('');
   return (
     <>
       <Hero isDarkMode={isDarkMode} />
@@ -28,8 +31,14 @@ function HomePage({ isDarkMode }) {
               Okazje lotnicze
             </GradientText>
           </div>
-          <SortBar isDarkMode={isDarkMode} />
-          <OffersGrid isDarkMode={isDarkMode} />
+          <SortBar
+            isDarkMode={isDarkMode}
+            sortOption={sortOption}
+            onSortChange={setSortOption}
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+          />
+          <OffersGrid isDarkMode={isDarkMode} sortOption={sortOption} searchQuery={searchQuery} />
         </div>
       </motion.div>
       
