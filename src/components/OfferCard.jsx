@@ -3,12 +3,22 @@ import { motion } from 'motion/react';
 import ClockIcon from '../assets/clock.svg';
 import AirplaneIcon from '../assets/airplane-landing.svg';
 import { getSlugForOffer } from '../utils/slugUtils';
+import { useLanguage } from '../i18n/LanguageContext';
 
 function OfferCard({ offer, isDarkMode }) {
+  const { language, convertAndFormatPrice, translateDate, t } = useLanguage();
   const slug = getSlugForOffer(offer.id);
   
+  // Translate transfers text
+  const getTransfersText = (przesiadki) => {
+    if (przesiadki === '0' || przesiadki === 'bez przesiadek' || przesiadki === 'direct') {
+      return t('direct');
+    }
+    return przesiadki;
+  };
+  
   return (
-    <Link to={`/oferta/${slug}`}>
+    <Link to={`/${language}/oferta/${slug}`}>
       <motion.div
         className={`${isDarkMode ? 'bg-[#252525]' : 'bg-white'} rounded-xl shadow-sm overflow-hidden cursor-pointer block`}
         whileHover={{
@@ -43,7 +53,7 @@ function OfferCard({ offer, isDarkMode }) {
       <div className="p-4 flex flex-col h-40">
         {/* Daty */}
         <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          {offer.dataWylotu} {'>'} {offer.dataPowrotu}
+          {translateDate(offer.dataWylotu)} {'>'} {translateDate(offer.dataPowrotu)}
         </p>
 
         {/* Czas i przesiadki + cena */}
@@ -56,11 +66,11 @@ function OfferCard({ offer, isDarkMode }) {
             <div className="flex items-center gap-1">
               <img src={AirplaneIcon} alt="Przesiadki" className={`w-4 h-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`} />
               <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                {offer.przesiadki === '0' ? 'Bez przesiadek' : offer.przesiadki}
+                {getTransfersText(offer.przesiadki)}
               </span>
             </div>
           </div>
-          <span className="text-[#d4a574] font-bold text-lg">{offer.cena || '???'}</span>
+          <span className="text-[#d4a574] font-bold text-lg">{convertAndFormatPrice(offer.cena)}</span>
         </div>
 
         {/* Trasa z animowanym samolotem */}
