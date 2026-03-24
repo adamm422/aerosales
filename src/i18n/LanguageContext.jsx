@@ -85,6 +85,12 @@ export function LanguageProvider({ children }) {
     return translated;
   }, [language]);
 
+  // Tłumaczenie kraju
+  const translateCountry = useCallback((countryName) => {
+    if (language === 'pl') return countryName;
+    return translations.en.countries[countryName] || countryName;
+  }, [language]);
+
   const value = {
     language,
     setLanguage,
@@ -96,6 +102,7 @@ export function LanguageProvider({ children }) {
     parsePrice,
     convertAndFormatPrice,
     translateDate,
+    translateCountry,
     currencyRates,
     currencySymbols
   };

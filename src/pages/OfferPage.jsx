@@ -6,6 +6,7 @@ import AirplaneLandingIcon from '../assets/airplane-landing.svg';
 import CalendarIcon from '../assets/calendar-blank.svg';
 import ClockIcon from '../assets/clock.svg';
 import BackpackIcon from '../assets/backpack.svg';
+import { useLanguage } from '../i18n/LanguageContext';
 
 // Mapa ikon dla atrakcji
 const iconMap = {
@@ -15,20 +16,20 @@ const iconMap = {
 function OfferPage({ isDarkMode }) {
   const { offerId } = useParams();
   const offer = getOfferBySlug(offerId);
-
+  const { language, t, convertAndFormatPrice, translateDate, translateCountry } = useLanguage();
 
   if (!offer) {
     return (
-      <div className="min-h-screen bg-[#f5f5f5]">
+      <div className={`min-h-screen ${isDarkMode ? 'bg-[#0a0a0a]' : 'bg-[#f5f5f5]'}`}>
         <div className="max-w-6xl mx-auto px-4 pt-20">
-          <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <h1 className="text-2xl font-bold mb-4 text-[#1a1a1a]">Oferta nie została znaleziona</h1>
-            <Link 
-              to="/" 
+          <div className={`rounded-2xl shadow-lg p-8 text-center ${isDarkMode ? 'bg-[#1a1a1a]' : 'bg-white'}`}>
+            <h1 className={`text-2xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-[#1a1a1a]'}`}>{t('offerNotFound')}</h1>
+            <Link
+              to={`/${language}/`}
               className="inline-flex items-center gap-2 text-[#d4a574] hover:text-[#c49464]"
             >
               <ArrowLeft size={20} />
-              Wróć do strony głównej
+              {t('backToHome')}
             </Link>
           </div>
         </div>
@@ -57,7 +58,7 @@ function OfferPage({ isDarkMode }) {
           <div className="max-w-6xl mx-auto px-4 pt-12 relative z-10">
             {/* Data */}
             <div className="inline-block bg-[#d4a574] text-[#1a1a1a] px-3 py-1 rounded text-sm font-medium mb-4">
-              {offer.dataWylotu}
+              {translateDate(offer.dataWylotu)}
             </div>
             
             {/* Tytuł */}
@@ -65,7 +66,7 @@ function OfferPage({ isDarkMode }) {
               {(offer.dokad || offer.miasto || 'Destynacja').split(' ')[0]}
             </h1>
             <p className="text-2xl text-white/90 mb-6 drop-shadow-md">
-              za <span className="font-bold text-[#d4a574]">{(offer.cena || '0 PLN').replace(' PLN', '')} PLN</span> w kwietniu
+              {t('from')} <span className="font-bold text-[#d4a574]">{convertAndFormatPrice(offer.cena)}</span> {t('inApril')}
             </p>
           </div>
         </div>
@@ -78,7 +79,7 @@ function OfferPage({ isDarkMode }) {
               {/* Skąd */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
                 <img src={AirplaneTakeoffIcon} alt="Skąd" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
-                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Skąd</p>
+                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t('from')}</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
                   {offer.skad || (offer.kodWylotu === 'WMI' ? 'Modlin' : offer.kodWylotu) || '???'}
                 </p>
@@ -87,7 +88,7 @@ function OfferPage({ isDarkMode }) {
               {/* Dokąd */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
                 <img src={AirplaneLandingIcon} alt="Dokąd" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
-                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Dokąd</p>
+                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t('to')}</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
                   {(offer.dokad || offer.miasto || '???').split(' ')[0]}
                 </p>
@@ -96,7 +97,7 @@ function OfferPage({ isDarkMode }) {
               {/* Kiedy */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
                 <img src={CalendarIcon} alt="Kiedy" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
-                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Kiedy</p>
+                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t('when')}</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
                   {(() => {
                     const months = {
@@ -118,16 +119,16 @@ function OfferPage({ isDarkMode }) {
               {/* Liczba przesiadek */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
                 <img src={BackpackIcon} alt="Przesiadki" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
-                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Przesiadki</p>
+                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t('transfers')}</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
-                  {offer.przesiadki === '0' ? 'Bez przesiadek' : offer.przesiadki}
+                  {offer.przesiadki === '0' || offer.przesiadki === 'bez przesiadek' ? t('direct') : offer.przesiadki}
                 </p>
               </div>
 
               {/* Długość podróży */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center col-span-2 md:col-span-1">
                 <img src={ClockIcon} alt="Czas" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
-                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Czas lotu</p>
+                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t('flightTime')}</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>{offer.czasLotu || offer.czas || '???'}</p>
               </div>
             </div>
@@ -144,7 +145,7 @@ function OfferPage({ isDarkMode }) {
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
                 <Ticket size={18} className={`md:w-5 md:h-5 ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`} />
-                <span className={`font-bold text-sm md:text-base ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`}>Bilety</span>
+                <span className={`font-bold text-sm md:text-base ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`}>{t('tickets')}</span>
               </div>
               <a
                 href={offer.link || 'https://www.ryanair.com/pl/pl'}
@@ -152,7 +153,7 @@ function OfferPage({ isDarkMode }) {
                 rel="noopener noreferrer"
                 className="block w-full bg-[#d4a574] hover:bg-[#c49464] text-[#1a1a1a] font-bold py-2.5 md:py-3 px-4 rounded-lg transition-colors text-sm md:text-base"
               >
-                Kup bilet
+                {t('buyTicket')}
               </a>
             </div>
 
@@ -160,10 +161,10 @@ function OfferPage({ isDarkMode }) {
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
                 <Bed size={18} className={`md:w-5 md:h-5 ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`} />
-                <span className={`font-bold text-sm md:text-base ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`}>Nocleg</span>
+                <span className={`font-bold text-sm md:text-base ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`}>{t('accommodation')}</span>
               </div>
               <button className={`block w-full border-2 font-semibold py-2.5 md:py-3 px-4 rounded-lg transition-colors text-sm md:text-base ${isDarkMode ? 'border-gray-600 text-gray-200 hover:border-[#d4a574]' : 'border-gray-300 text-[#1a1a1a] hover:border-[#d4a574]'}`}>
-                Niedługo
+                {t('comingSoon')}
               </button>
             </div>
 
@@ -171,10 +172,10 @@ function OfferPage({ isDarkMode }) {
             <div className={`text-center md:pl-6 ${isDarkMode ? 'md:border-l md:border-gray-700' : 'md:border-l md:border-gray-200'}`}>
               <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
                 <Users size={18} className={`md:w-5 md:h-5 ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`} />
-                <span className={`font-bold text-sm md:text-base ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`}>Społeczność</span>
+                <span className={`font-bold text-sm md:text-base ${isDarkMode ? 'text-gray-200' : 'text-[#1a1a1a]'}`}>{t('community')}</span>
               </div>
               <button className="block w-full bg-[#4a4a3a] hover:bg-[#3a3a2a] text-white font-semibold py-2.5 md:py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm md:text-base">
-                <span>➤</span> Dołączam
+                <span>➤</span> {t('join')}
               </button>
             </div>
           </div>
@@ -186,12 +187,12 @@ function OfferPage({ isDarkMode }) {
 
       {/* Powrót */}
       <div className="max-w-6xl mx-auto px-4 pb-12">
-        <Link 
-          to="/"
+        <Link
+          to={`/${language}/`}
           className={`inline-flex items-center gap-2 text-sm md:text-base transition-colors ${isDarkMode ? 'text-gray-400 hover:text-gray-200' : 'text-gray-600 hover:text-[#1a1a1a]'}`}
         >
           <ArrowLeft size={20} />
-          Wróć do wszystkich ofert
+          {t('backToOffers')}
         </Link>
       </div>
     </div>
@@ -205,6 +206,7 @@ function DestinationGallery({ offer, isDarkMode }) {
   const miastoName = (offer.dokad || offer.miasto || 'Destynacja').split(' ')[0];
   // Pobierz pierwsze zdjęcie lub użyj domyślnego
   const zdjecie = offer.zdjecia && offer.zdjecia.length > 0 ? offer.zdjecia[0] : null;
+  const { t, language } = useLanguage();
 
   if (!offer.opis) {
     return null;
@@ -217,7 +219,7 @@ function DestinationGallery({ offer, isDarkMode }) {
         <div className={`px-4 md:px-8 py-4 md:py-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-100'}`}>
           <h2 className={`text-xl md:text-2xl font-bold flex items-center gap-2 ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
             <MapPin className="text-[#d4a574]" size={24} />
-            {opis ? `Odkryj ${miastoName}` : 'Szczegóły oferty'}
+            {opis ? `${t('discover')} ${miastoName}` : t('details')}
           </h2>
         </div>
 
@@ -232,7 +234,7 @@ function DestinationGallery({ offer, isDarkMode }) {
             {/* Co warto zobaczyć */}
             <h3 className={`font-bold mb-4 text-base md:text-lg flex items-center gap-2 ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
               <Star className="text-[#d4a574]" size={20} />
-              Co warto zobaczyć
+              {t('worthSeeing')}
             </h3>
             <ul className="space-y-3">
               {atrakcje.map((attraction, index) => {
@@ -256,7 +258,7 @@ function DestinationGallery({ offer, isDarkMode }) {
               className="inline-flex items-center gap-2 mt-6 text-[#d4a574] hover:text-[#c49464] font-medium text-sm md:text-base transition-colors"
             >
               <MapPin size={18} />
-              Zobacz na mapie
+              {t('viewOnMap')}
             </a>
           </div>
 

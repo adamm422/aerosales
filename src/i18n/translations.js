@@ -38,6 +38,11 @@ export const translations = {
     offerNotFound: 'Oferta nie została znaleziona',
     backToHome: 'Wróć do strony głównej',
     backToOffers: 'Wróć do wszystkich ofert',
+    discover: 'Odkryj',
+    details: 'Szczegóły oferty',
+    worthSeeing: 'Co warto zobaczyć',
+    viewOnMap: 'Zobacz na mapie',
+    inApril: 'w kwietniu',
     from: 'Skąd',
     to: 'Dokąd',
     when: 'Kiedy',
@@ -81,6 +86,23 @@ export const translations = {
       października: 'października',
       listopada: 'listopada',
       grudnia: 'grudnia'
+    },
+    
+    // Countries
+    countries: {
+      'Grecja': 'Greece',
+      'Bułgaria': 'Bulgaria',
+      'Chiny': 'China',
+      'Włochy': 'Italy',
+      'Hiszpania': 'Spain',
+      'Portugalia': 'Portugal',
+      'Turcja': 'Turkey',
+      'Egipt': 'Egypt',
+      'Tunezja': 'Tunisia',
+      'Maroko': 'Morocco',
+      'Cypr': 'Cyprus',
+      'Malta': 'Malta',
+      'Polska': 'Poland'
     }
   },
   en: {
@@ -119,6 +141,14 @@ export const translations = {
     duration: 'Flight time',
     
     // OfferPage
+    offerNotFound: 'Offer not found',
+    backToHome: 'Back to home',
+    backToOffers: 'Back to all offers',
+    discover: 'Discover',
+    details: 'Offer details',
+    worthSeeing: 'What to see',
+    viewOnMap: 'View on map',
+    inApril: 'in April',
     attractions: 'Attractions',
     aboutDestination: 'About destination',
     bookNow: 'Book now',
@@ -146,6 +176,23 @@ export const translations = {
       października: 'October',
       listopada: 'November',
       grudnia: 'December'
+    },
+    
+    // Countries
+    countries: {
+      'Grecja': 'Greece',
+      'Bułgaria': 'Bulgaria',
+      'Chiny': 'China',
+      'Włochy': 'Italy',
+      'Hiszpania': 'Spain',
+      'Portugalia': 'Portugal',
+      'Turcja': 'Turkey',
+      'Egipt': 'Egypt',
+      'Tunezja': 'Tunisia',
+      'Maroko': 'Morocco',
+      'Cypr': 'Cyprus',
+      'Malta': 'Malta',
+      'Polska': 'Poland'
     }
   }
 };
