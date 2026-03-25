@@ -32,7 +32,7 @@ function Header({ onThemeChange, isDarkMode }) {
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
         {/* Logo - LEFT */}
         <Link to={`/${language}/`} className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
-          <img src="/logo.png?v=3" alt="aerosales" className="h-18 w-auto" />
+          <img src="/logo.png?v=3" alt="aerosales" className="h-10 w-auto" />
           <div className="text-white leading-none text-xl" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 500 }}>
             <div>Aero</div>
             <div>Sales</div>
