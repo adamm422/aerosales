@@ -79,7 +79,7 @@ function OfferPage({ isDarkMode }) {
               {/* Skąd */}
               <div className="py-3 md:py-4 px-2 md:px-2 text-center">
                 <img src={AirplaneTakeoffIcon} alt="Skąd" draggable="false" style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }} className={`mx-auto mb-1 md:mb-2 w-6 h-6 md:w-7 md:h-7 transition-all duration-300 pointer-events-none select-none ${isDarkMode ? 'invert brightness-0' : ''}`} />
-                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t('from')}</p>
+                <p className={`text-xs md:text-base mb-0.5 md:mb-1 font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t('departureFrom')}</p>
                 <p className={`text-base md:text-xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-[#1a1a1a]'}`}>
                   {offer.skad || (offer.kodWylotu === 'WMI' ? 'Modlin' : offer.kodWylotu) || '???'}
                 </p>
